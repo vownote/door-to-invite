@@ -20,9 +20,9 @@ const Index = () => {
 
       <main className="relative">
         <HeroSection />
-        <TornEdge index={0} />
+        {/* <TornEdge index={0} /> */}
 
-        <ScratchReveal />
+        {/* <ScratchReveal />
         <TornEdge index={1} />
 
         <CountdownTimer />
@@ -42,9 +42,9 @@ const Index = () => {
         <TornEdge index={6} />
 
         <ThankYou />
-        <TornEdge index={7} />
+        <TornEdge index={7} /> */}
 
-        <ContactFooter />
+        {/* <ContactFooter /> */}
       </main>
     </>
   );

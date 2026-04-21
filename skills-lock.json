@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "prompt-master": {
+      "source": "nidhinjs/prompt-master",
+      "sourceType": "github",
+      "computedHash": "d99ec3c50969406e277650874d056b6235b85645ba5eb823e4640d0eb1be8813"
+    },
+    "veo3-prompter": {
+      "source": "leegonzales/aiskills",
+      "sourceType": "github",
+      "computedHash": "9d5442e9bb1918543b1a1691f2cef26408d1f8a669ef7cdfcef10e55b341cb74"
+    }
+  }
+}
