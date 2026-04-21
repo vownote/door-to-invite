@@ -102,11 +102,9 @@ const HeroSection = () => {
       </AnimatePresence>
 
       {/* ── Invite content — appears inside the arch's cream white space ─────────
-          The video's final frame shows a golden mandap arch with a large ivory
-          blank interior. Content is constrained to that inner zone:
-            • mobile  : w-[50vw]  (~50 % of video width that fills the screen)
-            • desktop : md:w-[28vw] (the 9:16 arch column within the wider frame)
-          Colors mirror the arch — deep maroon text, antique gold accents.        */}
+          Arch inner zone ≈ 64 vw (video always fills viewport width via object-cover).
+          Container set to 58 vw mobile / 40 vw desktop — safely inside arch borders.
+          Font sizes use vw with raised clamp maxima so large screens are filled.    */}
       <AnimatePresence>
         {phase === 'ended' && (
           <motion.div
@@ -116,7 +114,7 @@ const HeroSection = () => {
             transition={{ duration: 0.55 }}
             className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
           >
-            <div className="text-center w-[50vw] md:w-[28vw]">
+            <div className="text-center w-[58vw] md:w-[40vw]">
 
               {/* "Together with their families" */}
               <motion.p
@@ -125,10 +123,11 @@ const HeroSection = () => {
                 transition={{ duration: 0.75, delay: 0.2, ease: 'easeOut' }}
                 className="font-body uppercase"
                 style={{
-                  fontSize: 'clamp(0.5rem, 1.7vw, 0.7rem)',
+                  fontSize: 'clamp(0.8rem, 1.5vw, 1.4rem)',
                   letterSpacing: '0.22em',
-                  color: '#7A1F1F',
-                  marginBottom: '0.75rem',
+                  color: '#1A0505',
+                  textShadow: '0 1px 6px rgba(255,240,210,0.8)',
+                  marginBottom: '1rem',
                 }}
               >
                 Together with their families
@@ -142,7 +141,7 @@ const HeroSection = () => {
               >
                 <h1
                   className="font-heading leading-none"
-                  style={{ fontSize: 'clamp(1.75rem, 6.5vw, 3rem)', color: '#4A0F0F' }}
+                  style={{ fontSize: 'clamp(2.5rem, 7vw, 8rem)', color: '#4A0F0F' }}
                 >
                   Priya
                 </h1>
@@ -152,14 +151,14 @@ const HeroSection = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1.05, ease: 'backOut' }}
                   className="font-heading italic"
-                  style={{ fontSize: 'clamp(1rem, 4vw, 1.75rem)', color: '#B8860B', margin: '0.15em 0' }}
+                  style={{ fontSize: 'clamp(1.75rem, 4vw, 4rem)', color: '#B8860B', margin: '0.2em 0' }}
                 >
                   &
                 </motion.p>
 
                 <h1
                   className="font-heading leading-none"
-                  style={{ fontSize: 'clamp(1.75rem, 6.5vw, 3rem)', color: '#4A0F0F' }}
+                  style={{ fontSize: 'clamp(2.5rem, 7vw, 8rem)', color: '#4A0F0F' }}
                 >
                   Arjun
                 </h1>
@@ -174,7 +173,7 @@ const HeroSection = () => {
                   height: '1px',
                   background: 'linear-gradient(90deg, transparent, #B8860B 30%, #B8860B 70%, transparent)',
                   width: '60%',
-                  margin: '0.8rem auto',
+                  margin: '1.2rem auto',
                 }}
               />
 
@@ -184,7 +183,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1.8, ease: 'easeOut' }}
                 className="font-body tracking-wide"
-                style={{ fontSize: 'clamp(0.45rem, 1.5vw, 0.65rem)', color: '#7A1F1F', lineHeight: 1.7 }}
+                style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.2rem)', color: '#1A0505', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
               >
                 Request the honour of your presence
               </motion.p>
@@ -193,7 +192,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 2.1, ease: 'easeOut' }}
                 className="font-body tracking-wide"
-                style={{ fontSize: 'clamp(0.4rem, 1.35vw, 0.6rem)', color: '#7A1F1F', lineHeight: 1.7 }}
+                style={{ fontSize: 'clamp(0.95rem, 1.1vw, 1.1rem)', color: '#1A0505', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
               >
                 at the celebration of their marriage
               </motion.p>
