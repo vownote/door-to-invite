@@ -116,6 +116,33 @@ const HeroSection = () => {
           >
             <div className="text-center w-[58vw] md:w-[40vw]">
 
+              {/* Ganesh murti — kankotri header emblem */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0, ease: 'easeOut' }}
+                className="flex flex-col items-center"
+                style={{ marginBottom: '0.6rem' }}
+              >
+                <img
+                  src="/hero/ganesh.png"
+                  alt="Shree Ganesh"
+                  style={{ width: '28%', height: 'auto', display: 'block', margin: '0 auto' }}
+                />
+                <p
+                  className="font-heading"
+                  style={{
+                    fontSize: 'clamp(0.6rem, 1.1vw, 1rem)',
+                    color: '#B8860B',
+                    letterSpacing: '0.18em',
+                    marginTop: '0.3rem',
+                    textShadow: '0 1px 4px rgba(255,240,210,0.9)',
+                  }}
+                >
+                  ॐ श्री गणेश
+                </p>
+              </motion.div>
+
               {/* "Together with their families" */}
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
