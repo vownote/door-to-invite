@@ -44,7 +44,6 @@ const Index = () => {
         <ThankYou />
         {/* <TornEdge index={7} /> */}
 
-        {/* <ContactFooter /> */}
       </main>
     </>
   );
