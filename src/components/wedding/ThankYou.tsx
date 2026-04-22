@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 
 const ThankYou = () => {
   return (
-    <section
-      className="relative py-24 md:py-32 px-4 overflow-hidden"
+    <footer
+      className="relative px-4 overflow-hidden min-h-[100dvh] flex flex-col items-center justify-center"
       style={{
         background: 'linear-gradient(160deg, #FAF3E0 0%, #F0E6C8 50%, #FAF3E0 100%)',
       }}
@@ -161,7 +161,7 @@ const ThankYou = () => {
         </motion.p>
 
       </div>
-    </section>
+    </footer>
   );
 };
 

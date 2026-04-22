@@ -35,7 +35,7 @@ const SectionTitle = ({ label, heading, description, className, dark = true }: S
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.15 }}
-        className="font-body text-xs uppercase"
+        className="font-body text-xs text-center uppercase"
         style={{ letterSpacing: '0.3em', color: labelColor, marginBottom: '0.5rem' }}
       >
         {label}

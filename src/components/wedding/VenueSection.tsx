@@ -78,7 +78,6 @@ const VenueSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.35, duration: 0.9 }}
-          className="mb-10 md:mb-14"
         >
           <img
             src="/assets/venue-illustration.png"
@@ -207,15 +206,15 @@ const VenueSection = () => {
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget;
-              el.style.background     = 'rgba(212,175,55,0.16)';
-              el.style.borderColor    = 'rgba(212,175,55,0.75)';
-              el.style.boxShadow      = '0 0 28px rgba(212,175,55,0.14)';
+              el.style.background = 'rgba(212,175,55,0.16)';
+              el.style.borderColor = 'rgba(212,175,55,0.75)';
+              el.style.boxShadow = '0 0 28px rgba(212,175,55,0.14)';
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget;
-              el.style.background     = 'rgba(212,175,55,0.07)';
-              el.style.borderColor    = 'rgba(212,175,55,0.45)';
-              el.style.boxShadow      = 'none';
+              el.style.background = 'rgba(212,175,55,0.07)';
+              el.style.borderColor = 'rgba(212,175,55,0.45)';
+              el.style.boxShadow = 'none';
             }}
           >
             {/* Map pin icon */}

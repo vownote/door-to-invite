@@ -34,7 +34,7 @@ const Index = () => {
         <VenueSection />
         {/* <TornEdge index={4} /> */}
 
-        {/* <Timeline /> */}
+        <Timeline />
         {/* <TornEdge index={5} /> */}
 
         <RSVPForm />
