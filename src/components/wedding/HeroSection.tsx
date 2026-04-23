@@ -10,9 +10,11 @@ interface HeroSectionProps {
 const HeroSection = ({ onComplete }: HeroSectionProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [phase, setPhase] = useState<Phase>('idle');
+  const [videoReady, setVideoReady] = useState(false);
 
   const handleTap = () => {
     if (phase === 'idle' && videoRef.current) {
+      videoRef.current.currentTime = 0.1; // t=0.1s is the first real keyframe
       videoRef.current.play();
       setPhase('playing');
     }
@@ -35,11 +37,12 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
         {...{ 'webkit-playsinline': 'true' }}
         preload="auto"
         poster="/hero/main-door.webp"
+        onPlaying={() => setVideoReady(true)}
         onEnded={() => {
           setPhase('ended');
           onComplete();
         }}
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover"
         style={{
           transform: 'translate3d(0, 0, 0)',
           WebkitTransform: 'translate3d(0, 0, 0)',
@@ -50,6 +53,23 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
       >
         <source src="/hero/door-to-invite-mobile.mp4" type="video/mp4" />
       </video>
+
+      {/* ── Poster overlay — hides video until the playing event fires ──────────
+          !videoReady means it stays visible through seek + decoder spin-up.
+          Fades out in 0.25s once the browser is actually outputting frames.   */}
+      <AnimatePresence>
+        {!videoReady && (
+          <motion.img
+            key="poster-overlay"
+            src="/hero/door-closed-snapshot.webp"
+            alt=""
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none"
+          />
+        )}
+      </AnimatePresence>
 
       {/* ── Tap-to-play overlay — visible only in idle phase ──────────────────── */}
       <AnimatePresence>
@@ -128,7 +148,7 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.55 }}
-            className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none cursor-none"
+            className="absolute inset-0 flex items-center justify-center z-10"
           >
             <div className="text-center w-[58vw] md:w-[40vw]">
 
@@ -143,7 +163,7 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
                 <img
                   src="/hero/ganesh.webp"
                   alt="Shree Ganesh"
-                  style={{ width: '28%', height: 'auto', display: 'block', margin: '0 auto' }}
+                  className='w-[38%] lg:w-[28%] h-auto block mx-auto my-0'
                 />
                 <p
                   className="font-heading"

@@ -28,7 +28,9 @@
       "WebSearch",
       "WebFetch(domain:unsplash.com)",
       "WebFetch(domain:www.pexels.com)",
-      "Bash(ffprobe -v quiet -print_format json -show_streams -show_format \"D:/wedding/door-to-invite/public/hero/door-to-invite-mobile.mp4\")"
+      "Bash(ffprobe -v quiet -print_format json -show_streams -show_format \"D:/wedding/door-to-invite/public/hero/door-to-invite-mobile.mp4\")",
+      "Bash(ffprobe -v quiet -print_format json -show_frames -select_streams v -read_intervals \"%+#10\" \"D:/wedding/door-to-invite/public/hero/door-to-invite-mobile.mp4\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(f'frame {i}: pts_time={f[\\\\\"pts_time\\\\\"]}, pict_type={f[\\\\\"pict_type\\\\\"]}, key_frame={f[\\\\\"key_frame\\\\\"]}'\\) for i,f in enumerate\\(d['frames']\\)]\")"
     ]
   }
 }
