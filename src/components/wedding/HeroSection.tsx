@@ -148,16 +148,16 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.55 }}
-            className="absolute inset-0 flex items-center justify-center z-10"
+            className="absolute inset-0 flex items-center justify-center z-10 select-text"
           >
-            <div className="text-center w-[58vw] md:w-[40vw]">
+            <div className="text-center w-[70vw] md:w-[40vw]">
 
               {/* Ganesh murti — kankotri header emblem */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0, ease: 'easeOut' }}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center pb-3 lg:pb-10"
                 style={{ marginBottom: '0.6rem' }}
               >
                 <img
@@ -168,7 +168,7 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
                 <p
                   className="font-heading"
                   style={{
-                    fontSize: 'clamp(0.6rem, 1.1vw, 1rem)',
+                    fontSize: 'clamp(0.8rem, 1.1vw, 1rem)',
                     color: '#B8860B',
                     letterSpacing: '0.18em',
                     marginTop: '0.3rem',
@@ -184,13 +184,12 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, delay: 0.2, ease: 'easeOut' }}
-                className="font-body uppercase"
+                className="font-body uppercase mb-[0.6rem] md:mb-[1rem]"
                 style={{
                   fontSize: 'clamp(0.8rem, 1.5vw, 1.4rem)',
                   letterSpacing: '0.22em',
                   color: '#1A0505',
                   textShadow: '0 1px 6px rgba(255,240,210,0.8)',
-                  marginBottom: '1rem',
                 }}
               >
                 Together with their families
@@ -204,7 +203,7 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
               >
                 <h1
                   className="font-heading leading-none"
-                  style={{ fontSize: 'clamp(2.5rem, 7vw, 8rem)', color: '#4A0F0F' }}
+                  style={{ fontSize: 'clamp(3.2rem, 7vw, 8rem)', color: '#4A0F0F' }}
                 >
                   Priya
                 </h1>
@@ -213,15 +212,15 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
                   initial={{ opacity: 0, scale: 0.3 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1.05, ease: 'backOut' }}
-                  className="font-heading italic"
-                  style={{ fontSize: 'clamp(1.75rem, 4vw, 4rem)', color: '#B8860B', margin: '0.2em 0' }}
+                  className="font-heading italic leading-none mt-3"
+                  style={{ fontSize: 'clamp(1.75rem, 4vw, 4rem)', color: '#B8860B' }}
                 >
                   &
                 </motion.p>
 
                 <h1
                   className="font-heading leading-none"
-                  style={{ fontSize: 'clamp(2.5rem, 7vw, 8rem)', color: '#4A0F0F' }}
+                  style={{ fontSize: 'clamp(3.2rem, 7vw, 8rem)', color: '#4A0F0F' }}
                 >
                   Arjun
                 </h1>
@@ -245,8 +244,8 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1.8, ease: 'easeOut' }}
-                className="font-body tracking-wide"
-                style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.2rem)', color: '#1A0505', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
+                className="font-body tracking-wide xl:mt-10"
+                style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.4rem)', color: '#1A0505', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
               >
                 Request the honour of your presence
               </motion.p>
@@ -255,7 +254,7 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 2.1, ease: 'easeOut' }}
                 className="font-body tracking-wide"
-                style={{ fontSize: 'clamp(0.95rem, 1.1vw, 1.1rem)', color: '#1A0505', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
+                style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.4rem)', color: '#1A0505', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
               >
                 at the celebration of their marriage
               </motion.p>
