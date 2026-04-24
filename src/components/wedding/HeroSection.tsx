@@ -61,7 +61,7 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
         {!videoReady && (
           <motion.img
             key="poster-overlay"
-            src="/hero/door-closed-snapshot.webp"
+            src="/hero/main-door.webp"
             alt=""
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
