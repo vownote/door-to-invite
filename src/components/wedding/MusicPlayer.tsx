@@ -9,6 +9,8 @@ const MusicPlayer = ({ canPlay }: MusicPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const startedRef = useRef(false);
+  // Track whether audio was playing before the page was hidden
+  const wasPlayingRef = useRef(false);
 
   // Auto-start music as soon as canPlay becomes true (after hero completes)
   useEffect(() => {
@@ -20,6 +22,7 @@ const MusicPlayer = ({ canPlay }: MusicPlayerProps) => {
       .then(() => {
         setIsPlaying(true);
         startedRef.current = true;
+        wasPlayingRef.current = true;
       })
       .catch(() => {
         // Browser blocked auto-play — wait for any user interaction
@@ -28,6 +31,7 @@ const MusicPlayer = ({ canPlay }: MusicPlayerProps) => {
             .then(() => {
               setIsPlaying(true);
               startedRef.current = true;
+              wasPlayingRef.current = true;
             })
             .catch(() => { });
           window.removeEventListener('click', resume);
@@ -38,14 +42,50 @@ const MusicPlayer = ({ canPlay }: MusicPlayerProps) => {
       });
   }, [canPlay]);
 
+  // Pause when tab/app goes to background; resume when it returns
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        // Page is hidden (tab switch, app minimized, screen off on mobile)
+        wasPlayingRef.current = !audio.paused;
+        if (!audio.paused) {
+          audio.pause();
+          setIsPlaying(false);
+        }
+      } else {
+        // Page is visible again — resume only if it was playing before
+        if (wasPlayingRef.current) {
+          audio.play()
+            .then(() => setIsPlaying(true))
+            .catch(() => {
+              // iOS/Android may block resume without a fresh user gesture;
+              // leave paused so the user can tap the button to resume
+            });
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
+
   const toggle = () => {
     const audio = audioRef.current;
     if (!audio) return;
     if (isPlaying) {
       audio.pause();
       setIsPlaying(false);
+      wasPlayingRef.current = false;
     } else {
-      audio.play().then(() => setIsPlaying(true)).catch(() => { });
+      audio.play().then(() => {
+        setIsPlaying(true);
+        wasPlayingRef.current = true;
+      }).catch(() => { });
     }
   };
 
