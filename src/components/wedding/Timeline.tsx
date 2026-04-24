@@ -204,8 +204,7 @@ const Timeline = () => {
                 <div className="md:hidden flex items-start gap-3 pl-14 pr-2 w-full">
                   <ScrollReveal delay={index * 0.1} className="w-full">
                     <div className="flex gap-4">
-                      <div className="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0"
-                        style={{ border: '1px solid rgba(184,134,11,0.18)' }}>
+                      <div className="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
                         <img src={event.image} alt={event.title} className="w-full h-full object-contain" />
                       </div>
                       <div className="flex-1 min-w-0">
