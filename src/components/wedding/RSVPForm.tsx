@@ -28,12 +28,11 @@ const inputStyle: React.CSSProperties = {
 
 const labelStyle: React.CSSProperties = {
   display: 'block',
-  fontFamily: 'inherit',
-  fontSize: 'clamp(0.7rem, 0.9vw, 0.82rem)',
-  letterSpacing: '0.25em',
+  fontFamily: "'Cinzel', serif",
+  fontSize: 'clamp(0.68rem, 0.85vw, 0.8rem)',
+  letterSpacing: '0.18em',
   textTransform: 'uppercase',
   color: '#7A1F1F',
-  marginBottom: '0.5rem',
 };
 
 const RSVPForm = () => {
@@ -113,7 +112,7 @@ const RSVPForm = () => {
 
   return (
     <section
-      className="relative py-24 md:py-32 px-4 overflow-hidden"
+      className="relative py-12 lg:py-16 px-4 overflow-hidden"
       style={sectionStyle}
     >
       {/* Mehndi dot texture */}
@@ -157,14 +156,14 @@ const RSVPForm = () => {
 
             {/* Name */}
             <div>
-              <label style={labelStyle}>Your Name</label>
+              <label className='font-bold' style={labelStyle}>Your Name</label>
               <input
                 type="text"
                 value={form.name}
                 onChange={e => handleChange('name', e.target.value)}
                 placeholder="Full Name"
                 style={inputStyle}
-                className="font-body placeholder:text-[rgba(45,8,8,0.72)] focus:border-b-[#B8860B]"
+                className="font-body font-bold placeholder:font-semibold placeholder:text-[rgba(45,8,8,0.72)] focus:border-b-[#B8860B]"
               />
               {errors.name && (
                 <p className="font-body text-xs mt-1" style={{ color: '#8B0000' }}>{errors.name}</p>
@@ -173,14 +172,14 @@ const RSVPForm = () => {
 
             {/* Email */}
             <div>
-              <label style={labelStyle}>Email Address</label>
+              <label className='font-bold' style={labelStyle}>Email Address</label>
               <input
                 type="email"
                 value={form.email}
                 onChange={e => handleChange('email', e.target.value)}
                 placeholder="your@email.com"
                 style={inputStyle}
-                className="font-body placeholder:text-[rgba(45,8,8,0.72)]"
+                className="font-body font-bold placeholder:font-semibold placeholder:text-[rgba(45,8,8,0.72)]"
               />
               {errors.email && (
                 <p className="font-body text-xs mt-1" style={{ color: '#8B0000' }}>{errors.email}</p>
@@ -189,14 +188,14 @@ const RSVPForm = () => {
 
             {/* Phone */}
             <div>
-              <label style={labelStyle}>Phone Number</label>
+              <label className='font-bold' style={labelStyle}>Phone Number</label>
               <input
                 type="tel"
                 value={form.phone}
                 onChange={e => handleChange('phone', e.target.value)}
                 placeholder="+91 XXXXX XXXXX"
                 style={inputStyle}
-                className="font-body placeholder:text-[rgba(45,8,8,0.72)]"
+                className="font-body font-bold placeholder:font-semibold placeholder:text-[rgba(45,8,8,0.72)]"
               />
               {errors.phone && (
                 <p className="font-body text-xs mt-1" style={{ color: '#8B0000' }}>{errors.phone}</p>
@@ -205,7 +204,7 @@ const RSVPForm = () => {
 
             {/* Attendance */}
             <div>
-              <label style={labelStyle}>Will You Be Joining Us?</label>
+              <label className='font-bold mb-3' style={labelStyle}>Will You Be Joining Us?</label>
               <div style={{ display: 'flex', gap: '1rem' }}>
                 {/* Joyfully Accept */}
                 <button
@@ -228,7 +227,7 @@ const RSVPForm = () => {
                     transition: 'all 0.2s',
                     letterSpacing: '0.04em',
                   }}
-                  className="font-body"
+                  className={`font-body font-bold`}
                 >
                   Joyfully Accept
                 </button>
@@ -254,7 +253,7 @@ const RSVPForm = () => {
                     transition: 'all 0.2s',
                     letterSpacing: '0.04em',
                   }}
-                  className="font-body"
+                  className="font-body font-bold"
                 >
                   Regretfully Decline
                 </button>

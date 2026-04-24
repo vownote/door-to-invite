@@ -12,7 +12,7 @@ const CalendarButton = () => {
 
   return (
     <section
-      className="relative py-20 md:py-24 px-4 overflow-hidden"
+      className="relative py-12 lg:py-16 px-4 overflow-hidden"
       style={{
         background: 'linear-gradient(160deg, #2D0808 0%, #4A1010 50%, #3A0C0C 100%)',
       }}
@@ -57,8 +57,8 @@ const CalendarButton = () => {
 
         {/* Label */}
         <p
-          className="font-body uppercase mb-3"
-          style={{ fontSize: 'clamp(0.72rem, 1.1vw, 0.9rem)', letterSpacing: '0.3em', color: 'rgba(212,175,55,1)' }}
+          className="font-label uppercase mb-3"
+          style={{ fontSize: 'clamp(0.7rem, 1vw, 0.85rem)', letterSpacing: '0.2em', color: 'rgba(212,175,55,1)' }}
         >
           Yaad Rakhein
         </p>

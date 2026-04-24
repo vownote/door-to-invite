@@ -27,7 +27,7 @@ const MAPS_URL =
 const VenueSection = () => {
   return (
     <section
-      className="relative py-24 md:py-32 px-4 overflow-hidden"
+      className="relative py-12 lg:py-16 px-4 overflow-hidden"
       style={{
         background: 'linear-gradient(160deg, #2D0808 0%, #4A1010 50%, #3A0C0C 100%)',
       }}
@@ -66,7 +66,6 @@ const VenueSection = () => {
           <SectionTitle
             label="Vivah Sthal"
             heading="Our Venue"
-            description="Join us at this magnificent palace where timeless elegance meets the grandeur of celebration"
             dark={true}
           />
         </div>
@@ -80,10 +79,10 @@ const VenueSection = () => {
           transition={{ delay: 0.35, duration: 0.9 }}
         >
           <img
+            className='w-full md:w-[70%] xl:w-[75%]'
             src="/assets/venue-illustration.webp"
             alt="Summer Palace — Our Wedding Venue"
             style={{
-              width: '100%',
               maxWidth: '860px',
               height: 'auto',
               display: 'block',
@@ -116,8 +115,8 @@ const VenueSection = () => {
             >
               {/* Card label */}
               <p
-                className="font-body uppercase mb-2"
-                style={{ letterSpacing: '0.3em', color: 'rgba(212,175,55,0.65)', fontSize: 'clamp(0.68rem, 1vw, 0.82rem)' }}
+                className="font-label font-semibold uppercase mb-2"
+                style={{ letterSpacing: '0.18em', color: 'rgba(212,175,55,0.85)', fontSize: 'clamp(0.66rem, 0.9vw, 0.8rem)' }}
               >
                 {label}
               </p>
@@ -135,15 +134,15 @@ const VenueSection = () => {
               {/* Card title */}
               <p
                 className="font-heading mb-1"
-                style={{ fontSize: 'clamp(1rem, 2vw, 1.45rem)', color: '#F5E8D0' }}
+                style={{ fontSize: 'clamp(1.2rem, 2vw, 1.45rem)', color: '#F5E8D0' }}
               >
                 {title}
               </p>
 
               {/* Card detail */}
               <p
-                className="font-body"
-                style={{ color: 'rgba(245,232,208,0.72)', letterSpacing: '0.05em', fontSize: 'clamp(0.75rem, 1.1vw, 0.9rem)' }}
+                className="font-body font-medium"
+                style={{ color: 'rgba(245,232,208,0.72)', letterSpacing: '0.05em', fontSize: 'clamp(0.9rem, 1.1vw, 0.9rem)' }}
               >
                 {detail}
               </p>

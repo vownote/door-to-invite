@@ -64,8 +64,8 @@ const CircleUnit = ({ value, label, max, delay }: { value: number; label: string
 
       {/* Unit label */}
       <p
-        className="font-body uppercase mt-3"
-        style={{ letterSpacing: '0.25em', color: 'rgba(212,175,55,0.8)', fontSize: 'clamp(0.72rem, 1.1vw, 0.9rem)' }}
+        className="font-label font-semibold uppercase mt-3"
+        style={{ letterSpacing: '0.15em', color: 'rgba(212,175,55,0.9)', fontSize: 'clamp(0.68rem, 0.9vw, 0.82rem)' }}
       >
         {label}
       </p>
@@ -81,7 +81,7 @@ const CountdownTimer = () => {
   return (
     <section
       ref={ref}
-      className="relative py-24 md:py-32 px-4 overflow-hidden"
+      className="relative py-12 lg:py-16 px-4 overflow-hidden"
       style={{
         background: 'linear-gradient(160deg, #2D0808 0%, #4A1010 50%, #3A0C0C 100%)',
       }}

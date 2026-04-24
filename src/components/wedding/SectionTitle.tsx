@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 interface SectionTitleProps {
   label: string;
   heading: string;
-  description: string;
+  description?: string;
   className?: string;
   dark?: boolean;
 }
@@ -11,7 +11,8 @@ interface SectionTitleProps {
 const SectionTitle = ({ label, heading, description, className, dark = true }: SectionTitleProps) => {
   const headingColor = dark ? '#F5E8D0' : '#2D0808';
   const descriptionColor = dark ? 'rgba(245,232,208,0.88)' : 'rgba(45,8,8,0.88)';
-  const labelColor = dark ? 'rgba(212,175,55,0.85)' : '#7A1F1F';
+  // const labelColor = dark ? 'rgba(212,175,55,0.85)' : '#7A1F1F';
+  const labelColor = dark ? '#B8860B' : '#B8860B';
   const lineColor = '#B8860B';
 
   return (
@@ -35,8 +36,8 @@ const SectionTitle = ({ label, heading, description, className, dark = true }: S
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.15 }}
-        className="font-body text-center uppercase"
-        style={{ letterSpacing: '0.3em', color: labelColor, marginBottom: '0.5rem', fontSize: 'clamp(0.72rem, 1.1vw, 0.9rem)' }}
+        className="font-label font-semibold text-center uppercase"
+        style={{ letterSpacing: '0.2em', color: labelColor, marginBottom: '0.5rem', fontSize: 'clamp(0.7rem, 1vw, 0.85rem)' }}
       >
         {label}
       </motion.p>
@@ -47,23 +48,22 @@ const SectionTitle = ({ label, heading, description, className, dark = true }: S
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
-        className="font-heading"
+        className="font-heading font-medium mb-1 lg:mb-2"
         style={{
           fontSize: 'clamp(2rem, 5vw, 3.5rem)',
           color: headingColor,
-          marginBottom: '1rem',
         }}
       >
         {heading}
       </motion.h2>
 
       {/* Sub-description */}
-      <motion.p
+      {description && <motion.p
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
-        className="font-body mx-auto"
+        className="font-body font-semibold mx-auto"
         style={{
           fontSize: 'clamp(0.95rem, 1.5vw, 1.3rem)',
           color: descriptionColor,
@@ -72,7 +72,7 @@ const SectionTitle = ({ label, heading, description, className, dark = true }: S
         }}
       >
         {description}
-      </motion.p>
+      </motion.p>}
     </div>
   );
 };

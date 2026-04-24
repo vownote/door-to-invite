@@ -75,6 +75,9 @@
   .font-body {
     font-family: 'Cormorant Garamond', serif;
   }
+  .font-label {
+    font-family: 'Cinzel', serif;
+  }
   .text-gold {
     color: hsl(var(--gold));
   }

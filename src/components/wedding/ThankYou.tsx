@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const ThankYou = () => {
   return (
     <footer
-      className="relative px-4 overflow-hidden min-h-[100dvh] flex flex-col items-center justify-center"
+      className="relative px-4 overflow-hidden min-h-[100dvh] py-12 lg:py-16 flex flex-col items-center justify-center"
       style={{
         background: 'linear-gradient(160deg, #FAF3E0 0%, #F0E6C8 50%, #FAF3E0 100%)',
       }}
@@ -49,10 +49,10 @@ const ThankYou = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="font-heading italic mb-5"
+          className="font-heading italic font-medium mb-5"
           style={{
             fontSize: 'clamp(0.9rem, 2vw, 1.1rem)',
-            color: '#7A1F1F',
+            color: '#B8860B',
             letterSpacing: '0.12em',
           }}
         >
@@ -97,8 +97,8 @@ const ThankYou = () => {
           style={{ marginBottom: '2rem' }}
         >
           <p
-            className="font-body uppercase mb-3"
-            style={{ fontSize: 'clamp(0.72rem, 1.1vw, 0.9rem)', letterSpacing: '0.3em', color: '#7A1F1F' }}
+            className="font-label font-semibold uppercase mb-3"
+            style={{ fontSize: 'clamp(0.7rem, 1vw, 0.85rem)', letterSpacing: '0.2em', color: '#B8860B' }}
           >
             For Any Queries
           </p>

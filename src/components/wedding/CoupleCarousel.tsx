@@ -101,7 +101,7 @@ const CoupleCarousel = () => {
 
   return (
     <section
-      className="relative py-24 md:py-32 overflow-hidden"
+      className="relative py-12 lg:py-16 overflow-hidden"
       style={{
         background: 'linear-gradient(160deg, #FAF3E0 0%, #F0E6C8 50%, #FAF3E0 100%)',
       }}

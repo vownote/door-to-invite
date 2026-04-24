@@ -16,6 +16,7 @@ const ScratchCard = ({ label, onRevealed, children }: ScratchCardProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const isDrawing = useRef(false);
   const totalPixels = useRef(0);
+  const hasCalledOnRevealed = useRef(false);
   const onRevealedRef = useRef(onRevealed);
   onRevealedRef.current = onRevealed;
 
@@ -91,17 +92,19 @@ const ScratchCard = ({ label, onRevealed, children }: ScratchCardProps) => {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+    if (hasCalledOnRevealed.current) return;
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     let cleared = 0;
     for (let i = 3; i < imageData.data.length; i += 4) {
       if (imageData.data[i] === 0) cleared++;
     }
     const percent = cleared / totalPixels.current;
-    if (percent > 0.55 && !revealed) {
+    if (percent > 0.55) {
+      hasCalledOnRevealed.current = true;
       setRevealed(true);
       onRevealedRef.current();
     }
-  }, [revealed]);
+  }, []);
 
   const scratchAt = useCallback((x: number, y: number) => {
     const canvas = canvasRef.current;
@@ -253,7 +256,7 @@ const ScratchReveal = () => {
       </svg>
 
       <section
-        className="relative w-full py-24 flex flex-col items-center justify-center bg-background px-4"
+        className="relative w-full py-12 lg:py-16 flex flex-col items-center justify-center bg-background px-4"
       >
         {/* OM symbol */}
         <motion.p
@@ -287,8 +290,9 @@ const ScratchReveal = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="font-body tracking-wider text-center"
-          style={{ color: '#7A1F1F', marginBottom: '2.5rem', fontSize: 'clamp(0.85rem, 1.4vw, 1.1rem)' }}
+          className="font-body font-semibold text-center"
+          // style={{ color: '#7A1F1F', marginBottom: '2.5rem', fontSize: 'clamp(0.85rem, 1.4vw, 1.2rem)' }}
+          style={{ color: '#B8860B', marginBottom: '2.5rem', fontSize: 'clamp(0.85rem, 1.4vw, 1.2rem)' }}
         >
           Scratch each seal to reveal the date of our union
         </motion.p>
