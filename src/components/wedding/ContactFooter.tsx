@@ -64,10 +64,10 @@ const ContactFooter = () => {
             <div className="w-16 h-px bg-primary/30" />
           </div>
           <p className="font-heading text-lg text-primary italic">
-            Priya & Arjun
+            Divya & Rishabh
           </p>
           <p className="font-body text-sm text-muted-foreground mt-2">
-            15th December 2026 · Surat, India
+            1st December 2026 · Ujjain
           </p>
           <p className="font-body text-xs text-muted-foreground mt-4">
             Made with ♥

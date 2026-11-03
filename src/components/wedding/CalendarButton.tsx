@@ -2,11 +2,11 @@ import { motion } from 'framer-motion';
 
 const CalendarButton = () => {
   const googleCalendarUrl = (() => {
-    const title = encodeURIComponent('Priya & Arjun Wedding');
-    const details = encodeURIComponent('You are cordially invited to the wedding ceremony of Priya & Arjun at Summer Palace, Surat.');
-    const location = encodeURIComponent('Summer Palace, Vesu, Surat, Gujarat 395007');
-    const startDate = '20261215T053000Z'; // 11:00 AM IST = 5:30 AM UTC
-    const endDate = '20261215T143000Z';   // 8:00 PM IST
+    const title = encodeURIComponent('Divya & Rishabh Wedding');
+    const details = encodeURIComponent('You are cordially invited to the wedding of Divya & Rishabh at Varay Grande, Ujjain.\nCarnival: 2:30 PM onwards (Pool Area)\nReception: 12:30 PM\nWedding Ceremony: 3:30 PM\nSangeet: 7:00 PM onwards');
+    const location = encodeURIComponent('Varay Grande, Ujjain, Madhya Pradesh');
+    const startDate = '20261201T070000Z'; // 12:30 PM IST = 07:00 UTC
+    const endDate = '20261201T170000Z';   // 10:30 PM IST
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
   })();
 
@@ -82,7 +82,7 @@ const CalendarButton = () => {
           className="font-body mb-8"
           style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.2rem)', color: 'rgba(245,232,208,0.92)', letterSpacing: '0.08em' }}
         >
-          December 15, 2026 · 10:00 AM Onwards · Summer Palace, Surat
+          December 01, 2026 · 12:30 PM Onwards · Varay Grande, Ujjain
         </p>
 
         {/* Add to calendar button */}
@@ -92,36 +92,38 @@ const CalendarButton = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          className="inline-flex items-center gap-3 font-body uppercase"
+          className="inline-flex items-center gap-4 font-body uppercase"
           style={{
-            padding: '0.875rem 2.5rem',
-            border: '1px solid rgba(212,175,55,0.45)',
+            padding: '1rem 2.5rem',
+            border: '1px solid rgba(212,175,55,0.55)',
             borderRadius: '100px',
-            background: 'rgba(212,175,55,0.07)',
-            color: '#D4AF37',
-            fontSize: 'clamp(0.78rem, 1vw, 0.92rem)',
-            letterSpacing: '0.22em',
+            background: '#F7E2B8',
+            color: '#8B1A1A',
+            fontSize: 'clamp(0.9rem, 1.05vw, 1rem)',
+            letterSpacing: '0.2em',
             textDecoration: 'none',
-            transition: 'background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
+            fontWeight: 700,
+            transition: 'background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease',
+            boxShadow: '0 16px 40px rgba(139,26,26,0.14)',
           }}
           onMouseEnter={(e) => {
             const el = e.currentTarget;
-            el.style.background  = 'rgba(212,175,55,0.16)';
-            el.style.borderColor = 'rgba(212,175,55,0.75)';
-            el.style.boxShadow   = '0 0 24px rgba(212,175,55,0.14)';
+            el.style.background = '#F4D99F';
+            el.style.transform = 'translateY(-1px)';
+            el.style.boxShadow = '0 20px 46px rgba(139,26,26,0.18)';
           }}
           onMouseLeave={(e) => {
             const el = e.currentTarget;
-            el.style.background  = 'rgba(212,175,55,0.07)';
-            el.style.borderColor = 'rgba(212,175,55,0.45)';
-            el.style.boxShadow   = 'none';
+            el.style.background = '#F7E2B8';
+            el.style.transform = 'none';
+            el.style.boxShadow = '0 16px 40px rgba(139,26,26,0.14)';
           }}
         >
           {/* Calendar icon */}
-          <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
-            <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.8"/>
-            <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+            <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2.2" />
+            <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
           </svg>
           Add to Google Calendar
         </motion.a>

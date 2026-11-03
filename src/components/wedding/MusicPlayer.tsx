@@ -12,7 +12,40 @@ const MusicPlayer = ({ canPlay }: MusicPlayerProps) => {
   // Track whether audio was playing before the page was hidden
   const wasPlayingRef = useRef(false);
 
-  // Auto-start music as soon as canPlay becomes true (after hero completes)
+  useEffect(() => {
+    const startAudio = () => {
+      const audio = audioRef.current;
+      if (!audio || startedRef.current) return;
+      audio.volume = 0.3;
+      audio.play()
+        .then(() => {
+          setIsPlaying(true);
+          startedRef.current = true;
+          wasPlayingRef.current = true;
+        })
+        .catch(() => {
+          // Browser blocked auto-play — wait for any user interaction
+          const resume = () => {
+            audio.play()
+              .then(() => {
+                setIsPlaying(true);
+                startedRef.current = true;
+                wasPlayingRef.current = true;
+              })
+              .catch(() => { });
+            window.removeEventListener('click', resume);
+            window.removeEventListener('touchstart', resume);
+          };
+          window.addEventListener('click', resume, { once: true });
+          window.addEventListener('touchstart', resume, { once: true });
+        });
+    };
+
+    window.addEventListener('doorTap', startAudio, { once: true });
+    return () => window.removeEventListener('doorTap', startAudio);
+  }, []);
+
+  // Auto-start music as soon as canPlay becomes true (after hero starts)
   useEffect(() => {
     if (!canPlay || startedRef.current) return;
     const audio = audioRef.current;
@@ -25,7 +58,6 @@ const MusicPlayer = ({ canPlay }: MusicPlayerProps) => {
         wasPlayingRef.current = true;
       })
       .catch(() => {
-        // Browser blocked auto-play — wait for any user interaction
         const resume = () => {
           audio.play()
             .then(() => {
@@ -92,7 +124,8 @@ const MusicPlayer = ({ canPlay }: MusicPlayerProps) => {
   return (
     <>
       <audio ref={audioRef} loop preload="auto">
-        <source src="https://framerusercontent.com/assets/7dqA8jlZHij9fuyhj602jarV4eg.mp3" type="audio/mpeg" />
+        {/* <source src="/assets/terebina-beswadi.mp3.mpeg" type="audio/mpeg" /> */}
+        <source src="/assets/milan-weddingsong-faded.mp3" type="audio/mp3" />
       </audio>
 
       <motion.button
@@ -102,7 +135,7 @@ const MusicPlayer = ({ canPlay }: MusicPlayerProps) => {
         transition={{ duration: 0.5 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-6 right-6 lg:right-14 lg:bottom-14 z-50 w-12 h-12 rounded-full bg-primary/80 backdrop-blur-sm text-primary-foreground flex items-center justify-center shadow-lg border border-gold/30"
+        className="fixed bottom-10 right-6 lg:right-14 lg:bottom-16 z-50 w-12 h-12 rounded-full bg-primary/80 backdrop-blur-sm text-primary-foreground flex items-center justify-center shadow-lg border border-gold/30"
         aria-label={isPlaying ? 'Pause music' : 'Play music'}
         style={{ pointerEvents: canPlay ? 'auto' : 'none' }}
       >

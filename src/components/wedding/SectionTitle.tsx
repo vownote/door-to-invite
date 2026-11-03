@@ -9,7 +9,7 @@ interface SectionTitleProps {
 }
 
 const SectionTitle = ({ label, heading, description, className, dark = true }: SectionTitleProps) => {
-  const headingColor = dark ? '#F5E8D0' : '#2D0808';
+  const headingColor = dark ? '#F5E8D0' : '#5E0000';
   const descriptionColor = dark ? 'rgba(245,232,208,0.88)' : 'rgba(45,8,8,0.88)';
   // const labelColor = dark ? 'rgba(212,175,55,0.85)' : '#7A1F1F';
   const labelColor = dark ? '#B8860B' : '#B8860B';

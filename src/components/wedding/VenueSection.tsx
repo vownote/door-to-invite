@@ -5,23 +5,23 @@ import SectionTitle from './SectionTitle';
 const DETAILS = [
   {
     label: 'Venue',
-    title: 'Summer Palace',
-    detail: 'Vesu, Surat, Gujarat 395007',
+    title: 'Varay Grande',
+    detail: 'Ujjain, Madhya Pradesh',
   },
   {
     label: 'Date',
-    title: 'December 15, 2026',
-    detail: 'Monday · Shubh Muhurat',
+    title: 'December 01, 2026',
+    detail: 'Tuesday',
   },
   {
     label: 'Time',
-    title: '10:00 AM Onwards',
-    detail: 'Ceremony & Celebrations',
+    title: '12:30 PM Onwards',
+    detail: 'Reception & Celebrations',
   },
 ];
 
 const MAPS_URL =
-  'https://www.google.com/maps/place/Summer+Palace/@21.085763,72.718192,507m/data=!3m1!1e3!4m6!3m5!1s0x3be0532e4a01a64f:0x19e8cd4aaa84508f!8m2!3d21.085763!4d72.718192!16s%2Fg%2F1ptz6zxt8?hl=en&entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D';
+  'https://maps.google.com/?cid=16776912553755572118';
 
 // ── Component ─────────────────────────────────────────────────────────────────
 const VenueSection = () => {
@@ -77,11 +77,14 @@ const VenueSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.35, duration: 0.9 }}
+          style={{
+            marginTop: '1rem'
+          }}
         >
           <img
             className='w-full md:w-[70%] xl:w-[75%]'
-            src="/assets/venue-illustration.webp"
-            alt="Summer Palace — Our Wedding Venue"
+            src="/assets/custom-venue-final.png"
+            alt="Varay Grande — Our Wedding Venue"
             style={{
               maxWidth: '860px',
               height: 'auto',
@@ -91,7 +94,8 @@ const VenueSection = () => {
               // screen blend: black pixels become transparent,
               // white line art floats on the maroon section background
               mixBlendMode: 'screen',
-              opacity: 0.82,
+              opacity: 1,
+              overflow: 'visible'
             }}
           />
         </motion.div>
@@ -115,8 +119,8 @@ const VenueSection = () => {
             >
               {/* Card label */}
               <p
-                className="font-label font-semibold uppercase mb-2"
-                style={{ letterSpacing: '0.18em', color: 'rgba(212,175,55,0.85)', fontSize: 'clamp(0.66rem, 0.9vw, 0.8rem)' }}
+                className="font-label font-black uppercase mb-2"
+                style={{ letterSpacing: '0.18em', color: 'rgba(212,175,55,0.85)', fontSize: '0.9rem' }}
               >
                 {label}
               </p>
@@ -191,38 +195,40 @@ const VenueSection = () => {
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 font-body uppercase"
+            className="group inline-flex items-center gap-4 font-body uppercase"
             style={{
-              padding: '0.875rem 2.75rem',
-              border: '1px solid rgba(212,175,55,0.45)',
+              padding: '1rem 2.75rem',
+              border: '1px solid rgba(212,175,55,0.55)',
               borderRadius: '100px',
-              background: 'rgba(212,175,55,0.07)',
-              color: '#D4AF37',
-              fontSize: 'clamp(0.78rem, 1vw, 0.92rem)',
-              letterSpacing: '0.22em',
+              background: '#F7E2B8',
+              color: '#8B1A1A',
+              fontSize: 'clamp(0.9rem, 1.05vw, 1rem)',
+              letterSpacing: '0.2em',
               textDecoration: 'none',
-              transition: 'background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
+              fontWeight: 700,
+              transition: 'background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease',
+              boxShadow: '0 18px 40px rgba(139,26,26,0.12)',
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget;
-              el.style.background = 'rgba(212,175,55,0.16)';
-              el.style.borderColor = 'rgba(212,175,55,0.75)';
-              el.style.boxShadow = '0 0 28px rgba(212,175,55,0.14)';
+              el.style.background = '#F4D99F';
+              el.style.transform = 'translateY(-1px)';
+              el.style.boxShadow = '0 22px 50px rgba(139,26,26,0.18)';
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget;
-              el.style.background = 'rgba(212,175,55,0.07)';
-              el.style.borderColor = 'rgba(212,175,55,0.45)';
-              el.style.boxShadow = 'none';
+              el.style.background = '#F7E2B8';
+              el.style.transform = 'none';
+              el.style.boxShadow = '0 18px 40px rgba(139,26,26,0.12)';
             }}
           >
             {/* Map pin icon */}
             <svg
-              width="13" height="13"
+              width="18" height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.8"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
@@ -232,11 +238,11 @@ const VenueSection = () => {
             Get Directions
             {/* Arrow */}
             <svg
-              width="11" height="11"
+              width="16" height="16"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.2"
               strokeLinecap="round"
               strokeLinejoin="round"
               style={{ transition: 'transform 0.3s ease' }}

@@ -3,8 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import ScrollReveal from './ScrollReveal';
 import SectionTitle from './SectionTitle';
 
-const MAPS_URL =
-  'https://www.google.com/maps/place/Summer+Palace/@21.085763,72.718192,507m/data=!3m1!1e3!4m6!3m5!1s0x3be0532e4a01a64f:0x19e8cd4aaa84508f!8m2!3d21.085763!4d72.718192!16s%2Fg%2F1ptz6zxt8?hl=en&entry=ttu';
+const MAPS_URL = 'https://maps.google.com/?cid=16776912553755572118';
 
 interface TimelineEvent {
   title: string;
@@ -15,66 +14,52 @@ interface TimelineEvent {
   venueUrl?: string;
   image: string;
   side: 'left' | 'right';
+  code: number;
 }
 
 const events: TimelineEvent[] = [
   {
-    title: 'Haldi Ceremony',
-    date: '13th December 2026',
-    time: '10:00 AM',
-    description: 'The auspicious turmeric ceremony to bless the couple with joy and prosperity',
-    venue: 'Family Residence',
+    code: 1,
+    title: 'Carnival',
+    date: '1st December 2026',
+    time: '2:30 PM Onwards',
+    description: 'A colourful poolside carnival of turmeric, music, and laughter to bless the bride and groom',
+    venue: 'Pool Area, Varay Grande, Ujjain',
+    venueUrl: MAPS_URL,
     image: '/assets/images/haldi.webp',
     side: 'left',
   },
   {
-    title: 'Mehndi Night',
-    date: '13th December 2026',
-    time: '6:00 PM',
-    description: 'Beautiful henna adorning hands with intricate patterns and timeless motifs',
-    venue: 'Summer Palace — Lotus Garden',
-    venueUrl: MAPS_URL,
-    image: '/assets/images/mehendi.webp',
-    side: 'right',
-  },
-  {
-    title: 'Sangeet & Cocktails',
-    date: '14th December 2026',
-    time: '7:00 PM',
-    description: 'An evening of music, dance, and joyful celebration with family and friends',
-    venue: 'Summer Palace — Grand Ballroom',
-    venueUrl: MAPS_URL,
-    image: '/assets/images/sangeet.webp',
-    side: 'left',
-  },
-  {
-    title: 'Baraat Procession',
-    date: '15th December 2026',
-    time: '9:00 AM',
-    description: 'A grand procession to welcome the groom on his most sacred day',
-    venue: 'Summer Palace — Main Entrance',
-    venueUrl: MAPS_URL,
-    image: '/assets/images/wedding.webp',
-    side: 'right',
-  },
-  {
-    title: 'Wedding Ceremony',
-    date: '15th December 2026',
-    time: '11:00 AM',
-    description: 'The sacred union of two souls through ancient Vedic rituals and vows',
-    venue: 'Summer Palace — Sacred Mandap',
-    venueUrl: MAPS_URL,
-    image: '/assets/images/wedding.webp',
-    side: 'left',
-  },
-  {
-    title: 'Grand Reception',
-    date: '15th December 2026',
-    time: '7:00 PM',
-    description: 'A grand celebration to welcome the newlyweds into their new journey together',
-    venue: 'Summer Palace — Crystal Hall',
+    code: 2,
+    title: 'Reception',
+    date: '1st December 2026',
+    time: '12:30 PM',
+    description: 'A warm gathering to welcome and celebrate the couple with our loved ones',
+    venue: 'Varay Grande, Ujjain',
     venueUrl: MAPS_URL,
     image: '/assets/images/reception.webp',
+    side: 'right',
+  },
+  {
+    code: 3,
+    title: 'Wedding Ceremony',
+    date: '1st December 2026',
+    time: '3:30 PM',
+    description: 'The sacred wedding ceremony, held with the blessings of our elders and loved ones',
+    venue: 'Varay Grande, Ujjain',
+    venueUrl: MAPS_URL,
+    image: '/assets/images/wedding.webp',
+    side: 'left',
+  },
+  {
+    code: 4,
+    title: 'Sangeet',
+    date: '1st December 2026',
+    time: '7:00 PM Onwards',
+    description: 'An evening of music, dance, and celebration with family and friends',
+    venue: 'Varay Grande, Ujjain',
+    venueUrl: MAPS_URL,
+    image: '/assets/images/sangeet.webp',
     side: 'right',
   },
 ];
@@ -84,7 +69,7 @@ const timeStyle: React.CSSProperties = {
   fontFamily: "'Cinzel', serif",
   fontSize: '0.68rem',
   letterSpacing: '0.22em',
-  color: '#B8860B',
+  color: '#7A1F1F',
   textTransform: 'uppercase',
   marginBottom: '4px',
   fontWeight: 600,
@@ -94,7 +79,8 @@ const titleStyle: React.CSSProperties = {
   fontFamily: "'Cormorant Garamond', serif",
   fontSize: 'clamp(1rem, 1.8vw, 1.25rem)',
   fontWeight: 600,
-  color: '#2D0808',
+  // color: '#2D0808',
+  color: '#154734',
   marginBottom: '4px',
   lineHeight: 1.2,
 };
@@ -153,7 +139,7 @@ const Timeline = () => {
           <SectionTitle
             label="Celebrations Schedule"
             heading="Wedding Schedule"
-            description="Three days of joyful rituals, music, and celebration with our loved ones"
+            description="A day of joyful rituals, music, and celebration with our loved ones"
             dark={false}
           />
         </div>
@@ -167,7 +153,7 @@ const Timeline = () => {
           />
 
           {/* Left line — mobile */}
-          <div className="md:hidden absolute left-6 top-0 bottom-0 w-px"
+          <div className="md:hidden absolute left-4 top-0 bottom-0 w-px"
             style={{ background: 'linear-gradient(to bottom, transparent, rgba(184,134,11,0.45) 10%, rgba(184,134,11,0.45) 90%, transparent)' }}
           />
 
@@ -183,7 +169,7 @@ const Timeline = () => {
 
           {/* Scrolling sakura — mobile */}
           <motion.div
-            className="absolute z-20 pointer-events-none md:hidden left-6 -translate-x-1/2"
+            className="absolute z-20 pointer-events-none md:hidden left-4 -translate-x-1/2"
             style={{ top: flowerY }}
           >
             <div className="w-8 h-8 -translate-y-1/2">
@@ -192,7 +178,7 @@ const Timeline = () => {
           </motion.div>
 
           {/* Events */}
-          <div className="space-y-6 md:space-y-8">
+          <div className="space-y-8 md:space-y-10">
             {events.map((event, index) => (
               <div
                 key={index}
@@ -201,17 +187,17 @@ const Timeline = () => {
               >
 
                 {/* ── Mobile layout ── */}
-                <div className="md:hidden flex items-start gap-3 pl-14 pr-2 w-full">
+                <div className="md:hidden flex items-start gap-3 pl-10 pr-2 w-full">
                   <ScrollReveal delay={index * 0.1} className="w-full">
-                    <div className="flex gap-4">
+                    <div className="flex gap-6">
                       <div className="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
                         <img src={event.image} alt={event.title} className="w-full h-full object-contain" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p style={{ ...timeStyle, fontSize: '0.6rem', marginBottom: '2px' }}>
+                        <p style={{ ...timeStyle, fontSize: '0.7rem', marginBottom: '8px', color: '#7A1F1F', fontFamily: 'system-ui' }}>
                           {event.date} · {event.time}
                         </p>
-                        <h3 style={{ ...titleStyle, fontSize: '1rem', marginBottom: '2px' }}>
+                        <h3 style={{ ...titleStyle, fontSize: '1.4rem', marginBottom: '12px' }}>
                           {event.title}
                         </h3>
                         <p style={{ ...descStyle, fontSize: '0.8rem', marginBottom: '2px' }}>
@@ -224,7 +210,7 @@ const Timeline = () => {
                             rel="noopener noreferrer"
                             style={{
                               ...venueBaseStyle,
-                              fontSize: '0.75rem',
+                              fontSize: '0.9rem',
                               textDecoration: 'underline',
                               textDecorationColor: 'rgba(122,31,31,0.4)',
                               textUnderlineOffset: '2px',
@@ -301,7 +287,7 @@ const Timeline = () => {
 
                 {/* Left dot — mobile */}
                 <div
-                  className="md:hidden absolute left-6 -translate-x-1/2 top-2 w-2.5 h-2.5 rounded-full z-10"
+                  className="md:hidden absolute left-4 -translate-x-1/2 top-2 w-2.5 h-2.5 rounded-full z-10"
                   style={{ border: '2px solid #B8860B', background: 'hsl(43,87%,94%)' }}
                 />
 

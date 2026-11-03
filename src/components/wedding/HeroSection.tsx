@@ -1,24 +1,37 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type Phase = 'idle' | 'playing' | 'ended';
 
 interface HeroSectionProps {
+  onStart: () => void;
   onComplete: () => void;
 }
 
-const HeroSection = ({ onComplete }: HeroSectionProps) => {
+const HeroSection = ({ onStart, onComplete }: HeroSectionProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [phase, setPhase] = useState<Phase>('idle');
   const [videoReady, setVideoReady] = useState(false);
+  const [hasAutoScrolled, setHasAutoScrolled] = useState(false);
 
   const handleTap = () => {
     if (phase === 'idle' && videoRef.current) {
       videoRef.current.currentTime = 0.1; // t=0.1s is the first real keyframe
       videoRef.current.play();
       setPhase('playing');
+      onStart();
+      window.dispatchEvent(new Event('doorTap'));
     }
   };
+
+  useEffect(() => {
+    if (phase !== 'ended' || hasAutoScrolled) return;
+    const timer = window.setTimeout(() => {
+      window.scrollBy({ top: 120, behavior: 'smooth' });
+      setHasAutoScrolled(true);
+    }, 1400);
+    return () => window.clearTimeout(timer);
+  }, [phase, hasAutoScrolled]);
 
   return (
     <section
@@ -83,56 +96,50 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
             className="absolute inset-0 z-20 cursor-pointer"
           >
             {/* Icon group — pinned to door-knob focal point (x=50%, y≈45%) */}
-            <motion.div
-              className="absolute left-1/2 flex flex-col items-center gap-2 sm:gap-3"
+            <div
+              className="absolute left-1/2 flex flex-col items-center gap-3"
               style={{ top: '55%', left: '50%', transform: 'translate(-50%, -50%)' }}
-              animate={{ opacity: [0.65, 1, 0.65] }}
-              transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
             >
-              {/* Ghost circle — shrinks fluidly from lg → sm screens */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-                className="
-                  rounded-full flex items-center justify-center
-                  [width:clamp(3.25rem,14vw,6rem)]
-                  [height:clamp(3.25rem,14vw,6rem)]
-                "
+              {/* Solid circle with stronger emphasis */}
+              <div
+                className="rounded-full flex items-center justify-center"
                 style={{
-                  background: 'rgba(255,255,255,0.13)',
-                  border: '1px solid rgba(255,255,255,0.48)',
-                  boxShadow: '0 0 24px rgba(0,0,0,0.25)',
+                  width: 'clamp(5.5rem, 16vw, 6.5rem)',
+                  height: 'clamp(5.5rem, 16vw, 6.5rem)',
+                  background: 'rgba(255,255,255,0.16)',
+                  border: '2px solid rgba(255,255,255,0.85)',
+                  boxShadow: '0 0 28px rgba(255,255,255,0.28)',
                 }}
               >
-                {/* Hand SVG — always 46% of circle so it scales with it */}
                 <svg
-                  style={{ width: '46%', height: '46%' }}
+                  style={{ width: '64%', height: '64%' }}
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="white"
-                  strokeWidth="1.75"
+                  strokeWidth="1"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  {/* Lucide "hand" — open palm, fingers up */}
                   <path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2" />
                   <path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2" />
                   <path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8" />
                   <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
                 </svg>
-              </motion.div>
+              </div>
 
-              {/* Label — scales with screen too */}
+              {/* Label — bold and heavy */}
               <span
-                className="font-body tracking-[0.3em] [font-size:clamp(0.55rem,2vw,0.7rem)]"
+                className="font-heading uppercase tracking-[0.35em] text-center"
                 style={{
-                  color: 'rgba(255,255,255,0.78)',
-                  textShadow: '0 1px 10px rgba(0,0,0,0.75)',
+                  color: 'white',
+                  fontWeight: 500,
+                  fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
+                  textShadow: '0 2px 16px rgba(255,255,0,0.65)',
                 }}
               >
                 Tap to continue
               </span>
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -157,45 +164,67 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0, ease: 'easeOut' }}
-                className="flex flex-col items-center pb-3 lg:pb-10"
+                className="flex flex-col items-center pb-3"
                 style={{ marginBottom: '0.6rem' }}
               >
                 <img
                   src="/hero/ganesh.webp"
                   alt="Shree Ganesh"
-                  className='w-[38%] lg:w-[28%] h-auto block mx-auto my-0'
+                  className='w-[28%] h-auto block mx-auto my-0'
                 />
                 <p
                   className="font-heading"
                   style={{
+                    fontWeight: 500,
                     fontSize: 'clamp(0.8rem, 1.1vw, 1rem)',
                     color: '#B8860B',
-                    letterSpacing: '0.18em',
                     marginTop: '0.3rem',
                     textShadow: '0 1px 4px rgba(255,240,210,0.9)',
                   }}
                 >
-                  ॐ श्री गणेश
+                  ॐ श्री गणेशाय नमः
                 </p>
+
+                {/* Vakratunda shloka */}
+                <motion.p
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
+                  className="font-heading italic"
+                  style={{
+                    fontSize: 'clamp(0.8rem, 2.2vw, 1rem)',
+                    fontWeight: 600,
+                    color: '#9A6E10',
+                    letterSpacing: '0.04em',
+                    lineHeight: 1.8,
+                    marginTop: '0.5rem',
+                    textShadow: '0 1px 6px rgba(255,240,210,0.95)',
+                    maxWidth: '90%',
+                  }}
+                >
+                  वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br />
+                  निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥
+                </motion.p>
               </motion.div>
 
-              {/* "Together with their families" */}
+              {/* "Wedding Invitation" */}
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, delay: 0.2, ease: 'easeOut' }}
-                className="font-body uppercase mb-[0.6rem] md:mb-[1rem]"
+                className="font-body uppercase mb-[0.6rem] md:mb-[1rem] font-bold"
                 style={{
-                  fontSize: 'clamp(0.8rem, 1.5vw, 1.4rem)',
+                  fontSize: 'clamp(0.9rem, 1.5vw, 1.4rem)',
                   letterSpacing: '0.22em',
-                  color: '#1A0505',
+                  color: '#7A1F1F',
                   textShadow: '0 1px 6px rgba(255,240,210,0.8)',
                 }}
               >
-                Together with their families
+                Wedding Invitation
               </motion.p>
 
               {/* Names */}
+              {/*
               <motion.div
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -205,7 +234,7 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
                   className="font-heading leading-none"
                   style={{ fontSize: 'clamp(3.2rem, 7vw, 8rem)', color: '#4A0F0F' }}
                 >
-                  Priya
+                  Divya
                 </h1>
 
                 <motion.p
@@ -222,8 +251,26 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
                   className="font-heading leading-none"
                   style={{ fontSize: 'clamp(3.2rem, 7vw, 8rem)', color: '#4A0F0F' }}
                 >
-                  Arjun
+                  Rishabh
                 </h1>
+              </motion.div>
+              */}
+
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.55, ease: 'easeOut' }}
+                className="flex justify-center"
+              >
+                <img
+                  src="/assets/dr-logo.png"
+                  alt="Divya & Rishabh"
+                  style={{
+                    width: 'clamp(10rem, 24vw, 16rem)',
+                    height: 'auto',
+                    filter: 'drop-shadow(0 10px 24px rgba(0,0,0,0.25))',
+                  }}
+                />
               </motion.div>
 
               {/* Gold gradient divider */}
@@ -235,7 +282,7 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
                   height: '1px',
                   background: 'linear-gradient(90deg, transparent, #B8860B 30%, #B8860B 70%, transparent)',
                   width: '60%',
-                  margin: '1.2rem auto',
+                  margin: '0.8rem auto',
                 }}
               />
 
@@ -244,8 +291,8 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1.8, ease: 'easeOut' }}
-                className="font-body tracking-wide xl:mt-10"
-                style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.4rem)', color: '#1A0505', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
+                className="font-body tracking-wide"
+                style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.4rem)', color: '#7a1f1f', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
               >
                 Request the honour of your presence
               </motion.p>
@@ -254,10 +301,33 @@ const HeroSection = ({ onComplete }: HeroSectionProps) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 2.1, ease: 'easeOut' }}
                 className="font-body tracking-wide"
-                style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.4rem)', color: '#1A0505', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
+                style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.4rem)', color: '#7a1f1f', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
               >
                 at the celebration of their marriage
               </motion.p>
+            </div>
+
+            <div
+              className="absolute left-1/2 bottom-8 flex flex-col items-center gap-1 text-center"
+              style={{ transform: 'translateX(-50%)' }}
+            >
+              <span
+                className="font-heading uppercase font-bold bg-[#7A1F1F] py-2 px-4 rounded-full"
+                style={{
+                  fontSize: '0.8rem',
+                  letterSpacing: '0.2em',
+                  color: '#F8F1DF',
+                  textShadow: '0 2px 16px rgba(0,0,0,0.45)',
+                }}
+              >
+                Scroll Down
+              </span>
+              <span
+                className="text-3xl"
+                style={{ color: '#F8F1DF', lineHeight: 1 }}
+              >
+                ↓
+              </span>
             </div>
           </motion.div>
         )}

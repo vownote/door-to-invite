@@ -318,7 +318,7 @@ const ScratchReveal = () => {
               className="font-heading absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
               style={{ fontSize: 'clamp(1.2rem, 4vw, 2rem)', color: '#3D1010', lineHeight: 1 }}
             >
-              15
+              07
             </p>
           </ScratchCard>
 
@@ -328,7 +328,7 @@ const ScratchReveal = () => {
               className="font-heading absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
               style={{ fontSize: 'clamp(1.2rem, 4vw, 2rem)', color: '#3D1010', lineHeight: 1.1 }}
             >
-              Dec
+              Sep
             </p>
           </ScratchCard>
 

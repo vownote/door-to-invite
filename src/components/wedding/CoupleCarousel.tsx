@@ -11,40 +11,10 @@ const SPEED_DESKTOP = 0.6;   // px per frame at ~60fps
 const SPEED_MOBILE = 1.1;   // px per frame at ~60fps
 const MOBILE_BREAKPOINT = 768; // px
 
-const GALLERY_PHOTOS = [
-  {
-    src: '/gallery/pexels-photo-19733687.webp',
-    alt: 'Indian wedding couple portrait, Surat',
-  },
-  {
-    src: '/gallery/pexels-photo-36836726.webp',
-    alt: 'Indian wedding couple under mandap',
-  },
-  {
-    src: '/gallery/pexels-photo-36098383.webp',
-    alt: 'Vibrant Indian wedding couple in traditional attire',
-  },
-  {
-    src: '/gallery/pexels-photo-30171219.webp',
-    alt: 'Traditional Indian wedding ceremony portrait',
-  },
-  {
-    src: '/gallery/pexels-photo-19230329.webp',
-    alt: 'Bengali couple at Indian wedding ceremony',
-  },
-  {
-    src: '/gallery/pexels-photo-34479834.webp',
-    alt: 'Beautiful Indian wedding couple in traditional attire',
-  },
-  {
-    src: '/gallery/pexels-photo-28210870.webp',
-    alt: 'Bride and groom in traditional Indian attire',
-  },
-  {
-    src: '/gallery/pexels-photo-7694286.webp',
-    alt: 'South Indian couple in traditional wedding attire',
-  },
-];
+const GALLERY_PHOTOS = Array.from({ length: CARD_COUNT }, (_, i) => ({
+  src: `/gallery/couple-${i + 1}.webp`,
+  alt: `Divya & Rishabh — photo ${i + 1}`,
+}));
 
 const loopedSlides = [...GALLERY_PHOTOS, ...GALLERY_PHOTOS];
 
