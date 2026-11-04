@@ -23,7 +23,7 @@ const CircleUnit = ({ value, label, max, delay }: { value: number; label: string
       <div
         className="relative w-28 h-28 md:w-36 md:h-36"
         style={{
-          border: '1px solid rgba(122,31,31,0.2)',
+          border: '1px solid rgba(31,77,69,0.2)',
           borderRadius: '50%',
         }}
       >
@@ -31,13 +31,13 @@ const CircleUnit = ({ value, label, max, delay }: { value: number; label: string
           <circle
             cx="60" cy="60" r={radius}
             fill="none"
-            stroke="rgba(122,31,31,0.12)"
+            stroke="rgba(31,77,69,0.12)"
             strokeWidth="3.5"
           />
           <circle
             cx="60" cy="60" r={radius}
             fill="none"
-            stroke="#7A1F1F"
+            stroke="#1F4D45"
             strokeWidth="3.5"
             strokeLinecap="round"
             strokeDasharray={circumference}
@@ -50,7 +50,7 @@ const CircleUnit = ({ value, label, max, delay }: { value: number; label: string
             className="font-heading"
             style={{
               fontSize: 'clamp(1.6rem, 4vw, 2.2rem)',
-              color: '#7A1F1F',
+              color: '#1F4D45',
               lineHeight: 1,
             }}
           >
@@ -61,7 +61,7 @@ const CircleUnit = ({ value, label, max, delay }: { value: number; label: string
 
       <p
         className="font-label font-semibold uppercase mt-3"
-        style={{ letterSpacing: '0.15em', color: '#7A1F1F', fontSize: 'clamp(0.68rem, 0.9vw, 0.82rem)' }}
+        style={{ letterSpacing: '0.15em', color: '#1F4D45', fontSize: 'clamp(0.68rem, 0.9vw, 0.82rem)' }}
       >
         {label}
       </p>
@@ -80,7 +80,7 @@ const CountdownTimer = () => {
       ref={ref}
       className="relative py-12 lg:py-16 px-4 overflow-hidden"
       style={{
-        background: 'linear-gradient(160deg, #efca66 0%, #d8a60f 50%, #cc930d 100%)',
+        background: 'linear-gradient(160deg, #CFE3DC 0%, #BBD7CD 50%, #AFCFC4 100%)',
       }}
     >
       <div
@@ -88,7 +88,7 @@ const CountdownTimer = () => {
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(135deg, #dfd791d6 0%, rgba(228,216,180,0.94) 40%, rgba(255,244,175,0.86) 100%)',
+          background: 'linear-gradient(135deg, rgba(238,247,243,0.92) 0%, rgba(218,237,229,0.94) 40%, rgba(244,250,247,0.88) 100%)',
           pointerEvents: 'none',
         }}
       />

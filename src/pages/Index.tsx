@@ -58,7 +58,7 @@ const Index = () => {
               {/* VowNote Branding — same pattern as morning-rose footer */}
               <footer
                 style={{
-                  background: '#4A0F0F',
+                  background: '#0B3A40',
                   borderTop: '1px solid rgba(184,134,11,0.2)',
                 }}
                 className="py-4 text-center"

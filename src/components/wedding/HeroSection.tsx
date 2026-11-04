@@ -216,7 +216,7 @@ const HeroSection = ({ onStart, onComplete }: HeroSectionProps) => {
                 style={{
                   fontSize: 'clamp(0.9rem, 1.5vw, 1.4rem)',
                   letterSpacing: '0.22em',
-                  color: '#7A1F1F',
+                  color: '#1F4D45',
                   textShadow: '0 1px 6px rgba(255,240,210,0.8)',
                 }}
               >
@@ -292,7 +292,7 @@ const HeroSection = ({ onStart, onComplete }: HeroSectionProps) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1.8, ease: 'easeOut' }}
                 className="font-body tracking-wide"
-                style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.4rem)', color: '#7a1f1f', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
+                style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.4rem)', color: '#2F5D50', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
               >
                 Request the honour of your presence
               </motion.p>
@@ -301,7 +301,7 @@ const HeroSection = ({ onStart, onComplete }: HeroSectionProps) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 2.1, ease: 'easeOut' }}
                 className="font-body tracking-wide"
-                style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.4rem)', color: '#7a1f1f', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
+                style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.4rem)', color: '#2F5D50', lineHeight: 1.7, textShadow: '0 1px 6px rgba(255,240,210,0.8)' }}
               >
                 at the celebration of their marriage
               </motion.p>
@@ -312,7 +312,7 @@ const HeroSection = ({ onStart, onComplete }: HeroSectionProps) => {
               style={{ transform: 'translateX(-50%)' }}
             >
               <span
-                className="font-heading uppercase font-bold bg-[#7A1F1F] py-2 px-4 rounded-full"
+                className="font-heading uppercase font-bold bg-[#14555B] py-2 px-4 rounded-full"
                 style={{
                   fontSize: '0.8rem',
                   letterSpacing: '0.2em',

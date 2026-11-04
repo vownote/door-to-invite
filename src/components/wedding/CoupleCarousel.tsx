@@ -73,7 +73,7 @@ const CoupleCarousel = () => {
     <section
       className="relative py-12 lg:py-16 overflow-hidden"
       style={{
-        background: 'linear-gradient(160deg, #FAF3E0 0%, #F0E6C8 50%, #FAF3E0 100%)',
+        background: 'linear-gradient(160deg, #FBEDE6 0%, #F6DDD3 50%, #FBEDE6 100%)',
       }}
     >
       {/* Mehndi dot texture overlay */}
@@ -122,8 +122,8 @@ const CoupleCarousel = () => {
                 height: CARD_HEIGHT,
                 borderRadius: 16,
                 border: '1px solid rgba(212,175,55,0.22)',
-                boxShadow: '0 8px 30px rgba(45,8,8,0.14)',
-                background: '#F0E6C8',
+                boxShadow: '0 8px 30px rgba(15,68,73,0.14)',
+                background: '#F6DDD3',
               }}
             >
               <img
@@ -144,7 +144,7 @@ const CoupleCarousel = () => {
           className="pointer-events-none absolute inset-y-0 left-0 z-20"
           style={{
             width: isMobile ? '60px' : '100px',
-            background: 'linear-gradient(to right, #F0E6C8 0%, transparent 100%)',
+            background: 'linear-gradient(to right, #F6DDD3 0%, transparent 100%)',
           }}
         />
         {/* Right fade mask */}
@@ -152,7 +152,7 @@ const CoupleCarousel = () => {
           className="pointer-events-none absolute inset-y-0 right-0 z-20"
           style={{
             width: isMobile ? '60px' : '100px',
-            background: 'linear-gradient(to left, #F0E6C8 0%, transparent 100%)',
+            background: 'linear-gradient(to left, #F6DDD3 0%, transparent 100%)',
           }}
         />
       </motion.div>

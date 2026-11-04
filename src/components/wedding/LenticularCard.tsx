@@ -79,7 +79,7 @@ const LenticularCard = () => {
     <section
       className="md:hidden relative pb-12 px-4 overflow-hidden"
       style={{
-        background: 'linear-gradient(160deg, #FAF3E0 0%, #F0E6C8 50%, #FAF3E0 100%)',
+        background: 'linear-gradient(160deg, #FBEDE6 0%, #F6DDD3 50%, #FBEDE6 100%)',
       }}
     >
       <div
@@ -104,8 +104,8 @@ const LenticularCard = () => {
           style={{
             borderRadius: '2rem',
             border: '1px solid rgba(212,175,55,0.35)',
-            boxShadow: '0 20px 50px rgba(45,8,8,0.16)',
-            background: '#F0E6C8',
+            boxShadow: '0 20px 50px rgba(15,68,73,0.16)',
+            background: '#F6DDD3',
           }}
           onTouchMove={handleTouchMove}
           onTouchStart={handleTouchMove}
@@ -130,7 +130,7 @@ const LenticularCard = () => {
         </motion.div>
 
         <div className="text-center mt-6">
-          <p className="font-body font-semibold" style={{ color: '#7A1F1F', fontSize: '0.95rem', lineHeight: 1.6 }}>
+          <p className="font-body font-semibold" style={{ color: '#2F5D50', fontSize: '0.95rem', lineHeight: 1.6 }}>
             Tilt your phone to blend the two portraits.
           </p>
 
@@ -144,7 +144,7 @@ const LenticularCard = () => {
                 border: '1px solid rgba(212,175,55,0.55)',
                 borderRadius: '100px',
                 background: '#F7E2B8',
-                color: '#8B1A1A',
+                color: '#14555B',
                 fontSize: '0.8rem',
                 letterSpacing: '0.18em',
                 fontWeight: 700,

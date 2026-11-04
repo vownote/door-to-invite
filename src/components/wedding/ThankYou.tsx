@@ -18,7 +18,7 @@ const ThankYou = () => {
     <footer
       className="relative px-4 overflow-hidden  flex flex-col items-center justify-center py-6"
       style={{
-        background: 'linear-gradient(160deg, #FAF3E0 0%, #F0E6C8 50%, #FAF3E0 100%)',
+        background: 'linear-gradient(160deg, #FBEDE6 0%, #F6DDD3 50%, #FBEDE6 100%)',
       }}
     >
       <style>{`
@@ -132,14 +132,14 @@ const ThankYou = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
           className="relative overflow-hidden mb-10 rounded-[2rem] border border-white/10"
-          style={{ background: '#7A1F1F', padding: '2rem 1.5rem', boxShadow: '0 20px 50px rgba(0,0,0,0.16)' }}
+          style={{ background: '#14555B', padding: '2rem 1.5rem', boxShadow: '0 20px 50px rgba(0,0,0,0.16)' }}
         >
           <div
             style={{
               position: 'absolute',
               inset: 0,
               // background: 'radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 28%), linear-gradient(180deg, rgba(255,255,255,0.06), transparent 60%)',
-              background: 'linear-gradient(160deg, #2D0808 0%, #4A1010 50%, #3A0C0C 100%)',
+              background: 'linear-gradient(160deg, #0B3A40 0%, #14555B 50%, #0F4449 100%)',
               pointerEvents: 'none',
             }}
           />
@@ -184,7 +184,7 @@ const ThankYou = () => {
                 <p
                   className="font-heading"
                   style={{
-                    color: '#F8E7D0',
+                    color: '#F2C0C7',
                     fontSize: 'clamp(3rem, 3vw, 2.3rem)',
                     lineHeight: 1.1,
                     fontWeight: 700,
@@ -227,7 +227,7 @@ const ThankYou = () => {
                 <p
                   className="font-heading"
                   style={{
-                    color: '#F8E7D0',
+                    color: '#F2C0C7',
                     fontSize: 'clamp(3rem, 3vw, 2.3rem)',
                     lineHeight: 1.1,
                     fontWeight: 700,
@@ -269,7 +269,7 @@ const ThankYou = () => {
           >
             For Any Queries
           </p>
-          <p className="font-body" style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)', color: 'rgba(45,8,8,0.85)', lineHeight: 1.8 }}>
+          <p className="font-body" style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)', color: 'rgba(31,77,69,0.85)', lineHeight: 1.8 }}>
             {CONTACTS.map(({ name, phone }, i) => (
               <span key={name}>
                 {i > 0 && <br />}
@@ -301,7 +301,7 @@ const ThankYou = () => {
           className="font-heading italic"
           style={{
             fontSize: 'clamp(0.95rem, 1.8vw, 1.15rem)',
-            color: 'rgba(45,8,8,0.82)',
+            color: 'rgba(31,77,69,0.82)',
             lineHeight: 1.9,
             maxWidth: '28rem',
             margin: '0 auto',

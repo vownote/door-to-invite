@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // ─── Confetti particles (CSS-based, no external lib) ─────────────────────────
 
-const CONFETTI_COLORS = ['#FF8C00', '#D4AF37', '#B8860B', '#8B1A2B', '#E8C84C'];
+const CONFETTI_COLORS = ['#FF8C00', '#D4AF37', '#B8860B', '#C0566F', '#E8C84C'];
 
 const confettiParticles = Array.from({ length: 70 }, (_, i) => ({
   id: i,
@@ -62,7 +62,7 @@ const ScratchRevealDateSingleBox = () => {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.font = `500 ${Math.max(26, canvas.height * 0.14)}px "Cormorant Garamond", serif`;
-    ctx.fillStyle = 'rgba(74,15,15)';
+    ctx.fillStyle = 'rgba(11,58,64)';
     ctx.fillText('✦  Scratch to reveal the date  ✦', canvas.width / 2, canvas.height / 2);
   }, []);
 
@@ -180,7 +180,7 @@ const ScratchRevealDateSingleBox = () => {
       <section
         className="relative w-full py-24 lg:py-20 flex flex-col items-center justify-center px-4"
         style={{
-          background: 'linear-gradient(160deg, #2D0808 0%, #4A1010 50%, #3A0C0C 100%)',
+          background: 'linear-gradient(160deg, #0B3A40 0%, #14555B 50%, #0F4449 100%)',
         }}
       >
 

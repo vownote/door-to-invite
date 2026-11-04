@@ -14,7 +14,7 @@ const CalendarButton = () => {
     <section
       className="relative py-12 lg:py-16 px-4 overflow-hidden"
       style={{
-        background: 'linear-gradient(160deg, #2D0808 0%, #4A1010 50%, #3A0C0C 100%)',
+        background: 'linear-gradient(160deg, #0B3A40 0%, #14555B 50%, #0F4449 100%)',
       }}
     >
       {/* Mehndi dot texture */}
@@ -98,25 +98,25 @@ const CalendarButton = () => {
             border: '1px solid rgba(212,175,55,0.55)',
             borderRadius: '100px',
             background: '#F7E2B8',
-            color: '#8B1A1A',
+            color: '#14555B',
             fontSize: 'clamp(0.9rem, 1.05vw, 1rem)',
             letterSpacing: '0.2em',
             textDecoration: 'none',
             fontWeight: 700,
             transition: 'background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease',
-            boxShadow: '0 16px 40px rgba(139,26,26,0.14)',
+            boxShadow: '0 16px 40px rgba(15,68,73,0.14)',
           }}
           onMouseEnter={(e) => {
             const el = e.currentTarget;
             el.style.background = '#F4D99F';
             el.style.transform = 'translateY(-1px)';
-            el.style.boxShadow = '0 20px 46px rgba(139,26,26,0.18)';
+            el.style.boxShadow = '0 20px 46px rgba(15,68,73,0.18)';
           }}
           onMouseLeave={(e) => {
             const el = e.currentTarget;
             el.style.background = '#F7E2B8';
             el.style.transform = 'none';
-            el.style.boxShadow = '0 16px 40px rgba(139,26,26,0.14)';
+            el.style.boxShadow = '0 16px 40px rgba(15,68,73,0.14)';
           }}
         >
           {/* Calendar icon */}

@@ -69,7 +69,7 @@ const timeStyle: React.CSSProperties = {
   fontFamily: "'Cinzel', serif",
   fontSize: '0.68rem',
   letterSpacing: '0.22em',
-  color: '#7A1F1F',
+  color: '#B04A63',
   textTransform: 'uppercase',
   marginBottom: '4px',
   fontWeight: 600,
@@ -88,7 +88,7 @@ const titleStyle: React.CSSProperties = {
 const descStyle: React.CSSProperties = {
   fontFamily: "'Cormorant Garamond', serif",
   fontSize: 'clamp(0.82rem, 1.1vw, 0.95rem)',
-  color: '#7A1F1F',
+  color: '#2F5D50',
   lineHeight: 1.55,
   marginBottom: '4px',
   fontWeight: 600,
@@ -98,7 +98,7 @@ const venueBaseStyle: React.CSSProperties = {
   fontFamily: "'Cormorant Garamond', serif",
   fontSize: 'clamp(0.78rem, 1vw, 0.88rem)',
   fontWeight: 600,
-  color: '#7A1F1F',
+  color: '#2F5D50',
 };
 
 /* ── Timeline Section ── */
@@ -116,7 +116,7 @@ const Timeline = () => {
       className="py-12 lg:py-16 px-5 relative overflow-hidden"
       style={{
         background:
-          'linear-gradient(180deg, hsl(40,50%,88%) 0%, hsl(43,87%,94%) 35%, hsl(43,87%,94%) 65%, hsl(40,50%,88%) 100%)',
+          'linear-gradient(180deg, hsl(15,55%,89%) 0%, hsl(18,76%,94%) 35%, hsl(18,76%,94%) 65%, hsl(15,55%,89%) 100%)',
       }}
       ref={containerRef}
     >
@@ -194,7 +194,7 @@ const Timeline = () => {
                         <img src={event.image} alt={event.title} className="w-full h-full object-contain" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p style={{ ...timeStyle, fontSize: '0.7rem', marginBottom: '8px', color: '#7A1F1F', fontFamily: 'system-ui' }}>
+                        <p style={{ ...timeStyle, fontSize: '0.7rem', marginBottom: '8px', color: '#B04A63', fontFamily: 'system-ui' }}>
                           {event.date} · {event.time}
                         </p>
                         <h3 style={{ ...titleStyle, fontSize: '1.4rem', marginBottom: '12px' }}>
@@ -212,7 +212,7 @@ const Timeline = () => {
                               ...venueBaseStyle,
                               fontSize: '0.9rem',
                               textDecoration: 'underline',
-                              textDecorationColor: 'rgba(122,31,31,0.4)',
+                              textDecorationColor: 'rgba(47,93,80,0.4)',
                               textUnderlineOffset: '2px',
                             }}
                           >
@@ -259,7 +259,7 @@ const Timeline = () => {
                             style={{
                               ...venueBaseStyle,
                               textDecoration: 'underline',
-                              textDecorationColor: 'rgba(122,31,31,0.4)',
+                              textDecorationColor: 'rgba(47,93,80,0.4)',
                               textUnderlineOffset: '2px',
                             }}
                           >
@@ -282,13 +282,13 @@ const Timeline = () => {
                 {/* Center dot — desktop */}
                 <div
                   className="hidden md:block absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full z-10"
-                  style={{ border: '2px solid #B8860B', background: 'hsl(43,87%,94%)' }}
+                  style={{ border: '2px solid #B8860B', background: 'hsl(18,76%,94%)' }}
                 />
 
                 {/* Left dot — mobile */}
                 <div
                   className="md:hidden absolute left-4 -translate-x-1/2 top-2 w-2.5 h-2.5 rounded-full z-10"
-                  style={{ border: '2px solid #B8860B', background: 'hsl(43,87%,94%)' }}
+                  style={{ border: '2px solid #B8860B', background: 'hsl(18,76%,94%)' }}
                 />
 
                 {/* Spacer — desktop */}
