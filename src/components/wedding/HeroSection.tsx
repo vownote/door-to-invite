@@ -159,7 +159,7 @@ const HeroSection = ({ onStart, onComplete }: HeroSectionProps) => {
           >
             <div className="text-center w-[70vw] md:w-[40vw]">
 
-              {/* Ganesh murti — kankotri header emblem */}
+              {/* Mahavir Bhagwan — kankotri header emblem */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -168,9 +168,9 @@ const HeroSection = ({ onStart, onComplete }: HeroSectionProps) => {
                 style={{ marginBottom: '0.6rem' }}
               >
                 <img
-                  src="/hero/ganesh.webp"
-                  alt="Shree Ganesh"
-                  className='w-[28%] h-auto block mx-auto my-0'
+                  src="/assets/mahavir-bhagwan.png"
+                  alt="Mahavir Bhagwan"
+                  className='w-[19%] h-auto block mx-auto my-0'
                 />
                 <p
                   className="font-heading"
