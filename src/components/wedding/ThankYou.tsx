@@ -41,7 +41,7 @@ const ThankYou = () => {
 
       <div className="max-w-2xl mx-auto text-center relative z-10">
 
-        {/* ── Radha-Krishna illustration ─────────────────────────────────────── */}
+        {/* ── Mahavir Bhagwan illustration ─────────────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,8 +50,8 @@ const ThankYou = () => {
           style={{ marginBottom: '1rem' }}
         >
           <img
-            src="/assets/radha-krishna.webp"
-            alt="Radha Krishna — Divine Blessing"
+            src="/assets/mahavir-bhagwan.png"
+            alt="Mahavir Bhagwan — Divine Blessing"
             style={{
               width: 'min(46vw, 300px)',
               height: 'auto',
@@ -110,7 +110,7 @@ const ThankYou = () => {
             lineHeight: 1.1,
           }}
         >
-          Jai Shree Krishna
+          Jai Jinendra
         </motion.h2>
 
         {/* ── Gold divider ──────────────────────────────────────────────────── */}

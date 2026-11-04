@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 const CalendarButton = () => {
   const googleCalendarUrl = (() => {
     const title = encodeURIComponent('Divya & Rishabh Wedding');
-    const details = encodeURIComponent('You are cordially invited to the wedding of Divya & Rishabh at Varay Grande, Ujjain.\nCarnival: 2:30 PM onwards (Pool Area)\nReception: 12:30 PM\nWedding Ceremony: 3:30 PM\nSangeet: 7:00 PM onwards');
+    const details = encodeURIComponent('You are cordially invited to the wedding of Divya & Rishabh at Varay Grande, Ujjain.\nCarnival (1 Dec): 2:30 PM onwards, Pool Area\nSangeet (1 Dec): 7:00 PM onwards\nReception (2 Dec): 12:30 PM\nWedding Ceremony (2 Dec): 3:30 PM');
     const location = encodeURIComponent('Varay Grande, Ujjain, Madhya Pradesh');
-    const startDate = '20261201T070000Z'; // 12:30 PM IST = 07:00 UTC
-    const endDate = '20261201T170000Z';   // 10:30 PM IST
+    const startDate = '20261201'; // all-day entry covering both days
+    const endDate = '20261203';   // Google all-day end date is exclusive
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
   })();
 
@@ -82,7 +82,7 @@ const CalendarButton = () => {
           className="font-body mb-8"
           style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.2rem)', color: 'rgba(245,232,208,0.92)', letterSpacing: '0.08em' }}
         >
-          December 01, 2026 · 12:30 PM Onwards · Varay Grande, Ujjain
+          December 01–02, 2026 · Varay Grande, Ujjain
         </p>
 
         {/* Add to calendar button */}

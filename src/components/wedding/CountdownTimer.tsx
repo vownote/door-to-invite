@@ -5,7 +5,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-const WEDDING_DATE = new Date('2026-12-01T15:30:00');
+const WEDDING_DATE = new Date('2026-12-02T15:30:00');
 
 const CircleUnit = ({ value, label, max, delay }: { value: number; label: string; max: number; delay: number }) => {
   const radius = 54;

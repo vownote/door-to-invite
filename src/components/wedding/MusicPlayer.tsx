@@ -125,7 +125,7 @@ const MusicPlayer = ({ canPlay }: MusicPlayerProps) => {
     <>
       <audio ref={audioRef} loop preload="auto">
         {/* <source src="/assets/terebina-beswadi.mp3.mpeg" type="audio/mpeg" /> */}
-        <source src="/assets/milan-weddingsong-faded.mp3" type="audio/mp3" />
+        <source src="/assets/Aaj_Sajeya.mp3" type="audio/mpeg" />
       </audio>
 
       <motion.button

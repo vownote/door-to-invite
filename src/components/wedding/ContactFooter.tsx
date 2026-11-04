@@ -67,7 +67,7 @@ const ContactFooter = () => {
             Divya & Rishabh
           </p>
           <p className="font-body text-sm text-muted-foreground mt-2">
-            1st December 2026 · Ujjain
+            2nd December 2026 · Ujjain
           </p>
           <p className="font-body text-xs text-muted-foreground mt-4">
             Made with ♥

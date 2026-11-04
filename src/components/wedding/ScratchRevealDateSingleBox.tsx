@@ -256,7 +256,7 @@ const ScratchRevealDateSingleBox = () => {
                 whiteSpace: 'nowrap',
               }}
             >
-              01 December 2026
+              02 December 2026
             </p>
             <p
               className="font-body font-bold text-center uppercase"
@@ -266,7 +266,7 @@ const ScratchRevealDateSingleBox = () => {
                 marginTop: '0.3rem',
               }}
             >
-              Tuesday
+              Wednesday
             </p>
           </div>
 

@@ -182,10 +182,10 @@ const HeroSection = ({ onStart, onComplete }: HeroSectionProps) => {
                     textShadow: '0 1px 4px rgba(255,240,210,0.9)',
                   }}
                 >
-                  ॐ श्री गणेशाय नमः
+                  श्री महावीराय नमः
                 </p>
 
-                {/* Vakratunda shloka */}
+                {/* Vakratunda shloka — hidden for this invite
                 <motion.p
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -204,7 +204,7 @@ const HeroSection = ({ onStart, onComplete }: HeroSectionProps) => {
                 >
                   वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br />
                   निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥
-                </motion.p>
+                </motion.p> */}
               </motion.div>
 
               {/* "Wedding Invitation" */}

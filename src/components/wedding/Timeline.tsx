@@ -31,28 +31,6 @@ const events: TimelineEvent[] = [
   },
   {
     code: 2,
-    title: 'Reception',
-    date: '1st December 2026',
-    time: '12:30 PM',
-    description: 'A warm gathering to welcome and celebrate the couple with our loved ones',
-    venue: 'Varay Grande, Ujjain',
-    venueUrl: MAPS_URL,
-    image: '/assets/images/reception.webp',
-    side: 'right',
-  },
-  {
-    code: 3,
-    title: 'Wedding Ceremony',
-    date: '1st December 2026',
-    time: '3:30 PM',
-    description: 'The sacred wedding ceremony, held with the blessings of our elders and loved ones',
-    venue: 'Varay Grande, Ujjain',
-    venueUrl: MAPS_URL,
-    image: '/assets/images/wedding.webp',
-    side: 'left',
-  },
-  {
-    code: 4,
     title: 'Sangeet',
     date: '1st December 2026',
     time: '7:00 PM Onwards',
@@ -60,6 +38,28 @@ const events: TimelineEvent[] = [
     venue: 'Varay Grande, Ujjain',
     venueUrl: MAPS_URL,
     image: '/assets/images/sangeet.webp',
+    side: 'right',
+  },
+  {
+    code: 3,
+    title: 'Reception',
+    date: '2nd December 2026',
+    time: '12:30 PM',
+    description: 'A warm gathering to welcome and celebrate the couple with our loved ones',
+    venue: 'Varay Grande, Ujjain',
+    venueUrl: MAPS_URL,
+    image: '/assets/images/reception.webp',
+    side: 'left',
+  },
+  {
+    code: 4,
+    title: 'Wedding Ceremony',
+    date: '2nd December 2026',
+    time: '3:30 PM',
+    description: 'The sacred wedding ceremony, held with the blessings of our elders and loved ones',
+    venue: 'Varay Grande, Ujjain',
+    venueUrl: MAPS_URL,
+    image: '/assets/images/wedding.webp',
     side: 'right',
   },
 ];
@@ -139,7 +139,7 @@ const Timeline = () => {
           <SectionTitle
             label="Celebrations Schedule"
             heading="Wedding Schedule"
-            description="A day of joyful rituals, music, and celebration with our loved ones"
+            description="Two days of joyful rituals, music, and celebration with our loved ones"
             dark={false}
           />
         </div>

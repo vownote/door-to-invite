@@ -10,8 +10,8 @@ const DETAILS = [
   },
   {
     label: 'Date',
-    title: 'December 01, 2026',
-    detail: 'Tuesday',
+    title: 'December 02, 2026',
+    detail: 'Wednesday',
   },
   {
     label: 'Time',
