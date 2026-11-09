@@ -20,6 +20,28 @@ interface TimelineEvent {
 const events: TimelineEvent[] = [
   {
     code: 1,
+    title: 'Mehandi',
+    date: '29th November 2026',
+    time: '1:00 PM Onwards',
+    description: 'Beautiful henna adorning hands with intricate patterns, shared with family and friends',
+    venue: 'Varay Grande, Ujjain',
+    venueUrl: MAPS_URL,
+    image: '/assets/images/mehendi.webp',
+    side: 'left',
+  },
+  {
+    code: 2,
+    title: 'Dinner',
+    date: '29th November 2026',
+    time: '5:00 PM Onwards',
+    description: 'A warm evening of good food and good company with our loved ones',
+    venue: 'Varay Grande, Ujjain',
+    venueUrl: MAPS_URL,
+    image: '/assets/images/dinner-thali.png',
+    side: 'right',
+  },
+  {
+    code: 3,
     title: 'Carnival',
     date: '1st December 2026',
     time: '2:30 PM Onwards',
@@ -30,7 +52,7 @@ const events: TimelineEvent[] = [
     side: 'left',
   },
   {
-    code: 2,
+    code: 4,
     title: 'Sangeet',
     date: '1st December 2026',
     time: '7:00 PM Onwards',
@@ -41,7 +63,18 @@ const events: TimelineEvent[] = [
     side: 'right',
   },
   {
-    code: 3,
+    code: 5,
+    title: 'Barat',
+    date: '2nd December 2026',
+    time: '12:15 PM Onwards',
+    description: 'The groom arrives in a joyful procession, with music, dance, and celebration',
+    venue: 'Varay Grande, Ujjain',
+    venueUrl: MAPS_URL,
+    image: '/assets/images/barat.png',
+    side: 'left',
+  },
+  {
+    code: 6,
     title: 'Reception',
     date: '2nd December 2026',
     time: '12:30 PM',
@@ -49,18 +82,18 @@ const events: TimelineEvent[] = [
     venue: 'Varay Grande, Ujjain',
     venueUrl: MAPS_URL,
     image: '/assets/images/reception.webp',
-    side: 'left',
+    side: 'right',
   },
   {
-    code: 4,
+    code: 7,
     title: 'Wedding Ceremony',
     date: '2nd December 2026',
-    time: '3:30 PM',
+    time: '3:30 PM Onwards',
     description: 'The sacred wedding ceremony, held with the blessings of our elders and loved ones',
     venue: 'Varay Grande, Ujjain',
     venueUrl: MAPS_URL,
     image: '/assets/images/wedding.webp',
-    side: 'right',
+    side: 'left',
   },
 ];
 
@@ -139,7 +172,7 @@ const Timeline = () => {
           <SectionTitle
             label="Celebrations Schedule"
             heading="Wedding Schedule"
-            description="Two days of joyful rituals, music, and celebration with our loved ones"
+            description="A few days of joyful rituals, music, and celebration with our loved ones"
             dark={false}
           />
         </div>

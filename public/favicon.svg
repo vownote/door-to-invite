@@ -3,7 +3,7 @@
   <circle cx="32" cy="32" r="32" fill="#7D1A2B"/>
   <!-- Decorative thin ring -->
   <circle cx="32" cy="32" r="28" fill="none" stroke="#C4933A" stroke-width="0.8" opacity="0.6"/>
-  <!-- "D" initial — Divya -->
+  <!-- "R" initial — Rishabh -->
   <text
     x="13"
     y="42"
@@ -13,7 +13,7 @@
     font-style="italic"
     fill="#C4933A"
     text-anchor="middle"
-  >D</text>
+  >R</text>
   <!-- "&" symbol -->
   <text
     x="32"
@@ -25,7 +25,7 @@
     text-anchor="middle"
     opacity="0.9"
   >&amp;</text>
-  <!-- "R" initial — Rishabh -->
+  <!-- "D" initial — Divya -->
   <text
     x="51"
     y="42"
@@ -35,5 +35,5 @@
     font-style="italic"
     fill="#C4933A"
     text-anchor="middle"
-  >R</text>
+  >D</text>
 </svg>

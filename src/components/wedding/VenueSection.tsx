@@ -15,8 +15,8 @@ const DETAILS = [
   },
   {
     label: 'Time',
-    title: '12:30 PM Onwards',
-    detail: 'Reception & Celebrations',
+    title: '12:15 PM Onwards',
+    detail: 'Barat & Reception',
   },
 ];
 

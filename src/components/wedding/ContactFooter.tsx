@@ -64,7 +64,7 @@ const ContactFooter = () => {
             <div className="w-16 h-px bg-primary/30" />
           </div>
           <p className="font-heading text-lg text-primary italic">
-            Divya & Rishabh
+            Rishabh & Divya
           </p>
           <p className="font-body text-sm text-muted-foreground mt-2">
             2nd December 2026 · Ujjain

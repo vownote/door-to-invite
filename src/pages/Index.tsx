@@ -47,8 +47,8 @@ const Index = () => {
               {/* <ScratchReveal /> */}
               <ScratchRevealDateSingleBox />
               <CountdownTimer />
-              <CoupleCarousel />
-              <LenticularCard />
+              {/* <CoupleCarousel /> */}
+              {/* <LenticularCard /> */}
               <VenueSection />
               <Timeline />
               {/* <RSVPForm /> */}

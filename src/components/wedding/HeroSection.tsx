@@ -234,7 +234,7 @@ const HeroSection = ({ onStart, onComplete }: HeroSectionProps) => {
                   className="font-heading leading-none"
                   style={{ fontSize: 'clamp(3.2rem, 7vw, 8rem)', color: '#4A0F0F' }}
                 >
-                  Divya
+                  Rishabh
                 </h1>
 
                 <motion.p
@@ -251,7 +251,7 @@ const HeroSection = ({ onStart, onComplete }: HeroSectionProps) => {
                   className="font-heading leading-none"
                   style={{ fontSize: 'clamp(3.2rem, 7vw, 8rem)', color: '#4A0F0F' }}
                 >
-                  Rishabh
+                  Divya
                 </h1>
               </motion.div>
               */}
@@ -263,8 +263,8 @@ const HeroSection = ({ onStart, onComplete }: HeroSectionProps) => {
                 className="flex justify-center"
               >
                 <img
-                  src="/assets/dr-logo.png"
-                  alt="Divya & Rishabh"
+                  src="/assets/rd-logo.png"
+                  alt="Rishabh & Divya"
                   style={{
                     width: 'clamp(10rem, 24vw, 16rem)',
                     height: 'auto',

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const FAMILY_NAME = 'Patodi family';
+const FAMILY_NAME = 'Shah family';
 const GROOM_NAME = 'Rishabh';
 const GROOM_GRANDPARENTS = 'Harakchandji & Padmadevi Shah';
 const GROOM_PARENTS = 'Pradeep ji & Manju ji Shah';
@@ -9,8 +9,8 @@ const BRIDE_GRANDPARENTS = 'Harakchandji & Pyaribai Patodi';
 const BRIDE_PARENTS = 'Anil & Roshni Patodi';
 // Contact block is hidden while this list is empty.
 const CONTACTS: { name: string; phone: string }[] = [
-  { name: 'Anil Jain', phone: '+91 94221 02771' },
-  { name: 'Gaurav Jain', phone: '+91 80072 04324' },
+  { name: 'Pradeep Shah', phone: '+91 98970 37856' },
+  { name: 'Manju Shah', phone: '+91 99975 55229' },
 ];
 
 const ThankYou = () => {
@@ -180,49 +180,6 @@ const ThankYou = () => {
                 marginTop: "4rem",
               }}
             >
-              <div style={{ maxWidth: '30rem', textAlign: 'center' }}>
-                <p
-                  className="font-heading"
-                  style={{
-                    color: '#F8E7D0',
-                    fontSize: 'clamp(3rem, 3vw, 2.3rem)',
-                    lineHeight: 1.1,
-                    fontWeight: 700,
-                    marginBottom: '0.6rem',
-                    fontFamily: '"Italianno", cursive',
-                  }}
-                >
-                  {BRIDE_NAME}
-                </p>
-                <p
-                  className="font-body"
-                  style={{
-                    color: '#F2D9B8',
-                    fontSize: 'clamp(0.9rem, 1.2vw, 1rem)',
-                    lineHeight: 1.7,
-                    letterSpacing: '0.03em',
-                  }}
-                >
-                  {BRIDE_GRANDPARENTS && <>Granddaughter of {BRIDE_GRANDPARENTS}<br /></>}
-                  {BRIDE_PARENTS && <>D/O {BRIDE_PARENTS}</>}
-                </p>
-              </div>
-
-              <div style={{ maxWidth: '30rem' }}>
-                <p
-                  className="font-heading"
-                  style={{
-                    color: '#F8E7D0',
-                    fontSize: 'clamp(1.6rem, 3vw, 2.3rem)',
-                    lineHeight: 1.1,
-                    fontWeight: 800,
-                    marginBottom: '1.2rem',
-                  }}
-                >
-                  &amp;
-                </p>
-              </div>
-
               <div style={{ maxWidth: '30rem' }}>
                 <p
                   className="font-heading"
@@ -248,6 +205,49 @@ const ThankYou = () => {
                 >
                   {GROOM_GRANDPARENTS && <>Grandson of {GROOM_GRANDPARENTS}<br /></>}
                   {GROOM_PARENTS && <>S/O {GROOM_PARENTS}</>}
+                </p>
+              </div>
+
+              <div style={{ maxWidth: '30rem' }}>
+                <p
+                  className="font-heading"
+                  style={{
+                    color: '#F8E7D0',
+                    fontSize: 'clamp(1.6rem, 3vw, 2.3rem)',
+                    lineHeight: 1.1,
+                    fontWeight: 800,
+                    marginBottom: '1.2rem',
+                  }}
+                >
+                  &amp;
+                </p>
+              </div>
+
+              <div style={{ maxWidth: '30rem', textAlign: 'center' }}>
+                <p
+                  className="font-heading"
+                  style={{
+                    color: '#F8E7D0',
+                    fontSize: 'clamp(3rem, 3vw, 2.3rem)',
+                    lineHeight: 1.1,
+                    fontWeight: 700,
+                    marginBottom: '0.6rem',
+                    fontFamily: '"Italianno", cursive',
+                  }}
+                >
+                  {BRIDE_NAME}
+                </p>
+                <p
+                  className="font-body"
+                  style={{
+                    color: '#F2D9B8',
+                    fontSize: 'clamp(0.9rem, 1.2vw, 1rem)',
+                    lineHeight: 1.7,
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  {BRIDE_GRANDPARENTS && <>Granddaughter of {BRIDE_GRANDPARENTS}<br /></>}
+                  {BRIDE_PARENTS && <>D/O {BRIDE_PARENTS}</>}
                 </p>
               </div>
 
@@ -327,7 +327,7 @@ const ThankYou = () => {
             letterSpacing: '0.06em',
           }}
         >
-          Divya &amp; Rishabh
+          Rishabh &amp; Divya
         </motion.p> */}
 
       </div>
