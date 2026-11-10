@@ -4,6 +4,7 @@ import ScrollReveal from './ScrollReveal';
 import SectionTitle from './SectionTitle';
 
 const MAPS_URL = 'https://maps.google.com/?cid=16776912553755572118';
+const SHAKUN_MAPS_URL = 'https://maps.app.goo.gl/taR7E1qbEcs4PR1d9';
 
 interface TimelineEvent {
   title: string;
@@ -20,12 +21,12 @@ interface TimelineEvent {
 const events: TimelineEvent[] = [
   {
     code: 1,
-    title: 'Mehandi',
+    title: 'Mehendi',
     date: '29th November 2026',
     time: '1:00 PM Onwards',
     description: 'Beautiful henna adorning hands with intricate patterns, shared with family and friends',
-    venue: 'Varay Grande, Ujjain',
-    venueUrl: MAPS_URL,
+    venue: 'Shakun Playfit, Jaipur',
+    venueUrl: SHAKUN_MAPS_URL,
     image: '/assets/images/mehendi.webp',
     side: 'left',
   },
@@ -35,8 +36,8 @@ const events: TimelineEvent[] = [
     date: '29th November 2026',
     time: '5:00 PM Onwards',
     description: 'A warm evening of good food and good company with our loved ones',
-    venue: 'Varay Grande, Ujjain',
-    venueUrl: MAPS_URL,
+    venue: 'Shakun Playfit, Jaipur',
+    venueUrl: SHAKUN_MAPS_URL,
     image: '/assets/images/dinner-thali.png',
     side: 'right',
   },
@@ -77,7 +78,7 @@ const events: TimelineEvent[] = [
     code: 6,
     title: 'Reception',
     date: '2nd December 2026',
-    time: '12:30 PM',
+    time: '1:30 PM Onwards',
     description: 'A warm gathering to welcome and celebrate the couple with our loved ones',
     venue: 'Varay Grande, Ujjain',
     venueUrl: MAPS_URL,

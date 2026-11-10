@@ -2,11 +2,11 @@ import { motion } from 'framer-motion';
 
 const FAMILY_NAME = 'Shah family';
 const GROOM_NAME = 'Rishabh';
-const GROOM_GRANDPARENTS = 'Harakchandji & Padmadevi Shah';
-const GROOM_PARENTS = 'Pradeep ji & Manju ji Shah';
+const GROOM_GRANDPARENTS = 'Late Smt Padma Devi & Late Shri Harak Chand Shah';
+const GROOM_PARENTS = 'Smt Manju & Shri Pradeep Shah';
 const BRIDE_NAME = 'Divya';
-const BRIDE_GRANDPARENTS = 'Harakchandji & Pyaribai Patodi';
-const BRIDE_PARENTS = 'Anil & Roshni Patodi';
+const BRIDE_GRANDPARENTS = 'Smt Pyaribai Ji & Shri Harak Chand Ji Patodi';
+const BRIDE_PARENTS = 'Smt Roshni Ji & Shri Anil Ji Patodi';
 // Contact block is hidden while this list is empty.
 const CONTACTS: { name: string; phone: string }[] = [
   { name: 'Pradeep Shah', phone: '+91 98970 37856' },

@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 const CalendarButton = () => {
   const googleCalendarUrl = (() => {
     const title = encodeURIComponent('Rishabh & Divya Wedding');
-    const details = encodeURIComponent('You are cordially invited to the wedding of Rishabh & Divya at Varay Grande, Ujjain.\nMehandi (29 Nov): 1:00 PM onwards\nDinner (29 Nov): 5:00 PM onwards\nCarnival (1 Dec): 2:30 PM onwards, Pool Area\nSangeet (1 Dec): 7:00 PM onwards\nBarat (2 Dec): 12:15 PM onwards\nReception (2 Dec): 12:30 PM\nWedding Ceremony (2 Dec): 3:30 PM onwards');
-    const location = encodeURIComponent('Varay Grande, Ujjain, Madhya Pradesh');
+    const details = encodeURIComponent('You are cordially invited to the wedding of Rishabh & Divya at Varay Grande, Ujjain.\nMehendi (29 Nov): 1:00 PM onwards, Shakun Playfit, Jaipur\nDinner (29 Nov): 5:00 PM onwards, Shakun Playfit, Jaipur\nCarnival (1 Dec): 2:30 PM onwards, Pool Area\nSangeet (1 Dec): 7:00 PM onwards\nBarat (2 Dec): 12:15 PM onwards\nReception (2 Dec): 1:30 PM onwards\nWedding Ceremony (2 Dec): 3:30 PM onwards');
+    const location = encodeURIComponent('Shakun Playfit, Jaipur (29 Nov) | Varay Grande, Ujjain, Madhya Pradesh (1-2 Dec)');
     const startDate = '20261129'; // all-day entry covering every function
     const endDate = '20261203';   // Google all-day end date is exclusive
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
@@ -82,7 +82,8 @@ const CalendarButton = () => {
           className="font-body mb-8"
           style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.2rem)', color: 'rgba(245,232,208,0.92)', letterSpacing: '0.08em' }}
         >
-          November 29 – December 02, 2026 · Varay Grande, Ujjain
+          November 29th — Shakun Playfit<br />
+          December 1st – 2nd — Varay Grande
         </p>
 
         {/* Add to calendar button */}
