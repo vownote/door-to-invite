@@ -68,7 +68,7 @@ const events: TimelineEvent[] = [
   },
   {
     code: 5,
-    title: 'Barat',
+    title: 'Baraat',
     date: '2nd December 2026',
     time: '12:15 PM Onwards',
     description: 'The groom arrives in a joyful procession, with music, dance, and celebration',

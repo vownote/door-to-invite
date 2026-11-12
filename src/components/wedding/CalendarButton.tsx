@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const CalendarButton = () => {
   const googleCalendarUrl = (() => {
     const title = encodeURIComponent('Rishabh & Divya Wedding');
-    const details = encodeURIComponent('You are cordially invited to the wedding of Rishabh & Divya at Varay Grande, Ujjain.\nMehendi & Dinner (29 Nov): Mehendi from 1:00 PM onwards, followed by dinner from 5:00 PM, Shakun Playfit, Jaipur\nCarnival (1 Dec): 2:30 PM onwards, Pool Area\nSangeet (1 Dec): 7:00 PM onwards\nBarat (2 Dec): 12:15 PM onwards\nReception (2 Dec): 1:30 PM onwards\nWedding Ceremony (2 Dec): 3:30 PM onwards');
+    const details = encodeURIComponent('You are cordially invited to the wedding of Rishabh & Divya at Varay Grande, Ujjain.\nMehendi & Dinner (29 Nov): Mehendi from 1:00 PM onwards, followed by dinner from 5:00 PM, Shakun Playfit, Jaipur\nCarnival (1 Dec): 2:30 PM onwards, Pool Area\nSangeet (1 Dec): 7:00 PM onwards\nBaraat (2 Dec): 12:15 PM onwards\nReception (2 Dec): 1:30 PM onwards\nWedding Ceremony (2 Dec): 3:30 PM onwards');
     const location = encodeURIComponent('Shakun Playfit, Jaipur (29 Nov) | Varay Grande, Ujjain, Madhya Pradesh (1-2 Dec)');
     const startDate = '20261129'; // all-day entry covering every function
     const endDate = '20261203';   // Google all-day end date is exclusive

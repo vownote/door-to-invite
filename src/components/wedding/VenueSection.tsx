@@ -16,7 +16,7 @@ const DETAILS = [
   {
     label: 'Time',
     title: '12:15 PM Onwards',
-    detail: 'Barat & Reception',
+    detail: 'Baraat & Reception',
   },
 ];
 
