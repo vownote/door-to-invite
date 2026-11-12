@@ -21,15 +21,17 @@ interface TimelineEvent {
 const events: TimelineEvent[] = [
   {
     code: 1,
-    title: 'Mehendi',
+    title: 'Mehendi & Dinner',
     date: '29th November 2026',
     time: '1:00 PM Onwards',
-    description: 'Beautiful henna adorning hands with intricate patterns, shared with family and friends',
+    description: 'Beautiful henna adorning hands with intricate patterns, followed by dinner from 5:00 PM onwards',
     venue: 'Shakun Playfit, Jaipur',
     venueUrl: SHAKUN_MAPS_URL,
     image: '/assets/images/mehendi.webp',
     side: 'left',
   },
+  // Dinner is now mentioned inside the Mehendi card - kept here, hidden, in case it is needed again
+  /*
   {
     code: 2,
     title: 'Dinner',
@@ -41,6 +43,7 @@ const events: TimelineEvent[] = [
     image: '/assets/images/dinner-thali.png',
     side: 'right',
   },
+  */
   {
     code: 3,
     title: 'Carnival',
@@ -50,7 +53,7 @@ const events: TimelineEvent[] = [
     venue: 'Pool Area, Varay Grande, Ujjain',
     venueUrl: MAPS_URL,
     image: '/assets/images/haldi.webp',
-    side: 'left',
+    side: 'right',
   },
   {
     code: 4,
@@ -61,7 +64,7 @@ const events: TimelineEvent[] = [
     venue: 'Varay Grande, Ujjain',
     venueUrl: MAPS_URL,
     image: '/assets/images/sangeet.webp',
-    side: 'right',
+    side: 'left',
   },
   {
     code: 5,
@@ -72,7 +75,7 @@ const events: TimelineEvent[] = [
     venue: 'Varay Grande, Ujjain',
     venueUrl: MAPS_URL,
     image: '/assets/images/barat.png',
-    side: 'left',
+    side: 'right',
   },
   {
     code: 6,
@@ -83,7 +86,7 @@ const events: TimelineEvent[] = [
     venue: 'Varay Grande, Ujjain',
     venueUrl: MAPS_URL,
     image: '/assets/images/reception.webp',
-    side: 'right',
+    side: 'left',
   },
   {
     code: 7,
@@ -94,7 +97,7 @@ const events: TimelineEvent[] = [
     venue: 'Varay Grande, Ujjain',
     venueUrl: MAPS_URL,
     image: '/assets/images/wedding.webp',
-    side: 'left',
+    side: 'right',
   },
 ];
 
