@@ -13,6 +13,24 @@ const CONTACTS: { name: string; phone: string }[] = [
   { name: 'Manju Shah', phone: '+91 99975 55229' },
 ];
 
+// Family acknowledgements shown above "For Any Queries". Names flow in one centered paragraph, separated by dots.
+const ACKNOWLEDGEMENTS: { heading: string; names: string[] }[] = [
+  { heading: 'Awaiting Your Gracious Presence', names: ['Kanta devi', 'Rajesh Devi', 'Asha Shah'] },
+  { heading: 'RSVP', names: ['Praveen - Lekha, Akshat, Manya'] },
+  {
+    heading: 'Best Compliments',
+    names: [
+      'Sunil - Meena', 'Anil - Mradula', 'Mukesh - Vinita', 'Sudhir - Indu', 'Sanjay - Meena',
+      'Amit - Nishi', 'Siddharth - Meenal', '& entire Shah family',
+    ],
+  },
+  {
+    heading: 'Special Request',
+    names: ['Pinki - Pradeep Ji Gangwal', 'Rekha - Piyush Ji Baj', 'Priyanka - Param Ji Jain'],
+  },
+  { heading: 'Establishments', names: ['Rishabh Enterprises, Agra', 'Arihant Engineering Co, Agra'] },
+];
+
 const ThankYou = () => {
   return (
     <footer
@@ -254,6 +272,43 @@ const ThankYou = () => {
             </div>
           </div>
         </motion.section>
+
+        {/* ── Family acknowledgements ───────────────────────────────────────── */}
+        {ACKNOWLEDGEMENTS.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            style={{ marginBottom: '2rem', maxWidth: '34rem', width: '100%' }}
+          >
+            {ACKNOWLEDGEMENTS.map(({ heading, names }, gi) => (
+              <div key={heading}>
+                {gi > 0 && (
+                  <div className="flex items-center justify-center gap-4 my-5">
+                    <span style={{ flex: 1, maxWidth: '3rem', height: '1px', background: 'rgba(184,134,11,0.45)', display: 'block' }} />
+                    <span className="font-body text-xs" style={{ color: 'rgba(184,134,11,0.75)' }}>✦</span>
+                    <span style={{ flex: 1, maxWidth: '3rem', height: '1px', background: 'rgba(184,134,11,0.45)', display: 'block' }} />
+                  </div>
+                )}
+                <p
+                  className="font-label font-semibold uppercase mb-2"
+                  style={{ fontSize: 'clamp(0.7rem, 1vw, 0.85rem)', letterSpacing: '0.2em', color: '#B8860B' }}
+                >
+                  {heading}
+                </p>
+                <p className="font-body" style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', color: 'rgba(45,8,8,0.85)', lineHeight: 1.8 }}>
+                  {names.map((n, i) => (
+                    <span key={n}>
+                      {i > 0 && <>{' '}<span style={{ color: '#B8860B' }}>·</span>{' '}</>}
+                      <span style={{ whiteSpace: 'nowrap' }}>{n}</span>
+                    </span>
+                  ))}
+                </p>
+              </div>
+            ))}
+          </motion.div>
+        )}
 
         {/* ── For any queries ───────────────────────────────────────────────── */}
         {CONTACTS.length > 0 && <motion.div
